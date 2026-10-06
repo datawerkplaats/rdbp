@@ -550,8 +550,6 @@ De uitkomsten van de drie voorbeeldvragen staan in [`voorbeelduitkomsten/`](voor
 
 ![Voorbeeld van een dashboard met de instroom, de instroom per zorgprofiel en de uitstroom](figuren/voorbeeld-dashboard.png)
 
-De drie voorbeeldvragen zijn gecontroleerd met rdflib 7.6.0: zij leveren op de voorbeelddata exact deze bestanden op.
-
 ## Aandachtspunten
 
 - **Klassenamen.** Zorgcontacten zijn gemodelleerd als `onz-zorg:ZorgProces` en intramurale periodes als `onz-zorg:NursingProcess`. Het landelijke KIK-V-uitwisselprofiel van de IGJ bevraagt zorgprocessen via de klasse `onz-g:CureAndCareProcess`. Ga voor gebruik op een productiedatastation na welke klassenamen daar gelden.
