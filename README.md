@@ -546,7 +546,9 @@ ORDER BY ?organisatieUitstroom ?locatieUitstroom ?locatieIntramuraal ?indicatieI
 
 ## Stap 5: visualiseren
 
-De uitkomsten van de drie voorbeeldvragen staan in [`voorbeelduitkomsten/`](voorbeelduitkomsten/): `instroom.csv`, `doorstroom.csv` en `uitstroom.csv`. Elk bestand bevat tellingen van unieke cliënten per herkomst of bestemming, intramurale locatie en zorgprofiel. Deze bestanden zijn de invoer voor een dashboard. In de beproeving heeft GERDA daarmee een voorbeelddashboard gemaakt.
+De uitkomsten van de drie voorbeeldvragen staan in [`voorbeelduitkomsten/`](voorbeelduitkomsten/): `instroom.csv`, `doorstroom.csv` en `uitstroom.csv`. Elk bestand bevat tellingen van unieke cliënten per herkomst of bestemming, intramurale locatie en zorgprofiel. Deze bestanden zijn de invoer voor een dashboard. De afbeelding toont een voorbeeld, gemaakt door GERDA: de instroom per locatie, de instroom per zorgprofiel en de uitstroom, elk als stroomdiagram.
+
+![Voorbeeld van een dashboard met de instroom, de instroom per zorgprofiel en de uitstroom](figuren/voorbeeld-dashboard.png)
 
 De drie voorbeeldvragen zijn gecontroleerd met rdflib 7.6.0: zij leveren op de voorbeelddata exact deze bestanden op.
 
