@@ -1,0 +1,40 @@
+PREFIX onz-g:    <http://purl.org/ozo/onz-g#>
+PREFIX onz-zorg: <http://purl.org/ozo/onz-zorg#>
+PREFIX ext:      <http://data.dummyzorg.nl/ext#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?clientnummer ?naam ?startdatum ?locatie ?codeType ?indicatie ?overlijdensdatum
+WHERE {
+    ?human a onz-g:Human ;
+           rdfs:label ?naam .
+
+    ?contact a onz-zorg:ZorgProces ;
+             onz-g:hasParticipant ?human ;
+             onz-g:startDatum ?startdatum ;
+             onz-g:hasPerdurantLocation/rdfs:label ?locatie .
+
+    OPTIONAL {
+        ?contact onz-g:definedBy ?code .
+        ?code a ?codeClass .
+        FILTER(STRSTARTS(STR(?codeClass), STR(ext:)))
+        BIND(STRAFTER(STR(?codeClass), "#") AS ?codeType)
+    }
+
+    OPTIONAL {
+        ?contact onz-g:definedBy ?ind .
+        ?ind a ?indClass .
+        FILTER(?indClass IN (
+            onz-zorg:WlzIndicatie,
+            onz-zorg:ZvwIndicatie,
+            onz-zorg:WmoIndicatie,
+            onz-zorg:IndicatieBesluitPartnerverblijf
+        ))
+        BIND(STRAFTER(STR(?indClass), "#") AS ?indicatie)
+    }
+
+    OPTIONAL { ?human onz-g:hasDateOfDeath ?overlijdensdatum }
+
+    BIND(STRAFTER(STR(?human), "Human_") AS ?clientnummer)
+}
+ORDER BY ?clientnummer ?startdatum

@@ -1,0 +1,71 @@
+PREFIX onz-g:    <http://purl.org/ozo/onz-g#>
+PREFIX onz-zorg: <http://purl.org/ozo/onz-zorg#>
+PREFIX onz-org:  <http://purl.org/ozo/onz-org#>
+PREFIX ext:      <http://data.dummyzorg.nl/ext#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?persoon
+       ?voorStart ?voorLocatie ?voorCodeLabel ?voorIndicatie
+       ?wlzStart ?wlzEind ?zorgprofiel ?leveringsvorm ?locatie
+       ?naStart ?naLocatie ?naCodeLabel ?naIndicatie
+WHERE {
+    # In de zorg
+    ?nursingProces a onz-zorg:NursingProcess ;
+                   onz-g:hasParticipant ?persoon ;
+                   onz-g:definedBy ?indicatie ; # WLZ-indicatie, subclass van indicatiebesluit
+                   onz-g:startDatum ?wlzStart . # startDatum ZorgProces
+    OPTIONAL { ?nursingProces onz-g:eindDatum ?wlzEind }
+
+    # Zorgprofiel en leveringsvorm
+    ?indicatie onz-g:hasPart ?zorgprofiel .
+    ?zorgprofiel a onz-zorg:ZorgProfiel .
+    ?indicatie onz-g:hasPart ?leveringsvorm .
+    ?leveringsvorm a onz-zorg:Leveringsvorm .
+
+     OPTIONAL { ?nursingProces onz-g:hasPerdurantLocation/rdfs:label ?locatie }
+
+    # Voor de zorg (100 dagen)
+    OPTIONAL {
+        ?voorProces a onz-zorg:ZorgProces ;
+                    onz-g:hasParticipant ?persoon ;
+                    onz-g:startDatum ?voorStart . # geen indicatiebesluit.
+        FILTER (?voorStart < ?wlzStart &&
+                ?voorStart >= ?wlzStart - "P100D"^^xsd:dayTimeDuration)
+        FILTER NOT EXISTS { # laatste zorgcontact als instroom
+            ?andereVoor a onz-zorg:ZorgProces ;
+            			onz-g:hasParticipant ?persoon ;
+            			onz-g:startDatum ?andereStart .
+            FILTER (?andereStart < ?wlzStart && ?andereStart > ?voorStart)
+        }
+        OPTIONAL { ?voorProces onz-g:hasPerdurantLocation/rdfs:label ?voorLocatie }
+        OPTIONAL { ?voorProces onz-g:definedBy ?voorCodering .
+                   ?voorCodering rdfs:label ?voorCodeLabel }
+        OPTIONAL { ?voorProces onz-g:definedBy ?voorIndicatie .
+        			?voorIndicatie a onz-zorg:IndicatieBesluit .
+        }
+    }
+
+    # Na de zorg
+    OPTIONAL {
+        ?naProces a onz-zorg:ZorgProces ;
+                  onz-g:hasParticipant ?persoon ;
+                  onz-g:startDatum ?naStart .
+        FILTER BOUND(?wlzEind)
+        FILTER (?naStart > ?wlzEind)
+        FILTER NOT EXISTS {
+            ?andereNa a onz-zorg:ZorgProces ;
+                onz-g:hasParticipant ?persoon ;
+                onz-g:startDatum ?andereStart .
+            FILTER(?andereStart > ?wlzEind &&
+                    ?andereStart < ?naStart )
+        }
+        OPTIONAL { ?naProces onz-g:hasPerdurantLocation/rdfs:label ?naLocatie }
+        OPTIONAL { ?naProces onz-g:definedBy ?naCodering .
+                   ?naCodering rdfs:label ?naCodeLabel }
+        OPTIONAL { ?naProces onz-g:definedBy ?naIndicatie .
+                    ?naIndicatie a onz-zorg:IndicatieBesluit }
+    }
+}
+ORDER BY ?persoon ?wlzStart

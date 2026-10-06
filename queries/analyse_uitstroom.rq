@@ -1,0 +1,62 @@
+PREFIX onz-g:    <http://purl.org/ozo/onz-g#>
+PREFIX onz-org:  <http://purl.org/ozo/onz-org#>
+PREFIX onz-zorg: <http://purl.org/ozo/onz-zorg#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+
+# Uitstroom: eerste zorgcontact of overlijden na het einde van een intramurale periode.
+# Levert uitstroom.csv op (testdata_HA_MSZ.ttl + testdata_VVT.ttl samen laden).
+SELECT ?organisatieUitstroom ?locatieUitstroom ?locatieIntramuraal ?indicatieIntramuraal (COUNT(DISTINCT ?persoon) AS ?aantalClienten)
+WHERE {
+    ?np a onz-zorg:NursingProcess ;
+        onz-g:hasParticipant ?persoon ;
+        onz-g:definedBy ?ind ;
+        onz-g:eindDatum ?eind ;
+        onz-g:hasPerdurantLocation ?vestigingIntramuraal .
+    ?vestigingIntramuraal rdfs:label ?locatieIntramuraal .
+    FILTER(STRSTARTS(?locatieIntramuraal, "Sensire - "))
+
+    ?ind onz-g:hasPart ?zp .
+    ?zp a onz-zorg:ZorgProfiel .
+    BIND(STRAFTER(STR(?zp), "#") AS ?indicatieIntramuraal)
+
+    # uitstroom is een zorgcontact of overlijden
+    {
+        ?na a onz-zorg:ZorgProces ;
+            onz-g:hasParticipant ?persoon ;
+            onz-g:startDatum ?naStart ;
+            onz-g:hasPerdurantLocation ?vestigingUitstroom .
+        ?vestigingUitstroom rdfs:label ?locatieUitstroom .
+        OPTIONAL { ?vestigingUitstroom onz-org:vestigingVan/rdfs:label ?organisatieContact }
+    } UNION {
+        ?persoon onz-g:hasDateOfDeath ?naStart .
+        BIND(true AS ?overleden)
+        BIND("overleden" AS ?locatieUitstroom)
+    }
+    # bij overlijden is de organisatie die van de intramurale vestiging
+    OPTIONAL { ?vestigingIntramuraal onz-org:vestigingVan/rdfs:label ?organisatieIntramuraal }
+    BIND(IF(BOUND(?overleden), ?organisatieIntramuraal, ?organisatieContact) AS ?organisatieUitstroom)
+
+    # een periode kan eindigen op de dag van overlijden
+    FILTER(IF(BOUND(?overleden), ?naStart >= ?eind, ?naStart > ?eind))
+
+    # alleen de eerste gebeurtenis na het einde
+    FILTER NOT EXISTS {
+        ?ander a onz-zorg:ZorgProces ;
+               onz-g:hasParticipant ?persoon ;
+               onz-g:startDatum ?anderStart .
+        FILTER(?anderStart > ?eind && ?anderStart < ?naStart)
+    }
+    FILTER NOT EXISTS {
+        ?persoon onz-g:hasDateOfDeath ?doodsdatum .
+        FILTER(?doodsdatum >= ?eind && ?doodsdatum < ?naStart)
+    }
+    # geen uitstroom als er eerst een nieuwe intramurale periode volgt (doorstroom)
+    FILTER NOT EXISTS {
+        ?volgend a onz-zorg:NursingProcess ;
+                 onz-g:hasParticipant ?persoon ;
+                 onz-g:startDatum ?volgendStart .
+        FILTER(?volgendStart > ?eind && ?volgendStart <= ?naStart)
+    }
+}
+GROUP BY ?organisatieUitstroom ?locatieUitstroom ?locatieIntramuraal ?indicatieIntramuraal
+ORDER BY ?organisatieUitstroom ?locatieUitstroom ?locatieIntramuraal ?indicatieIntramuraal

@@ -1,0 +1,390 @@
+{
+  "version": "5.0",
+  "name": "Marga Klompé - Instroom/Doorstroom/Uitstroom met overlijden en herindicatie",
+  "description": "",
+  "single_dataset_query_policy": "allow_owner",
+  "tables": [
+    {
+      "name": "Marga Klompé clienten",
+      "source": {
+        "type": "csv",
+        "filename": "marga-klompé-clienten.csv"
+      },
+      "attributes": [
+        {
+          "column": "clientnummer",
+          "name": "Clientnummer",
+          "description": "Landelijk matchingnummer van de client; hetzelfde nummer wordt in de andere datastations gebruikt.",
+          "type": "string",
+          "primary_key": true,
+          "not_null": true,
+          "select_policy": "deny",
+          "filter_policy": "deny"
+        },
+        {
+          "column": "overleden",
+          "name": "Overleden",
+          "description": "Of er bij deze organisatie een overlijdensdatum bekend is. Alleen gevuld in het datastation waar de client het laatst in zorg was.",
+          "type": "option",
+          "options": [
+            "ja",
+            "nee"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "overlijdensdatum",
+          "name": "Overlijdensdatum",
+          "description": "Datum van overlijden, indien bekend bij een datastation",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        }
+      ],
+      "default_select_policy": "aggregate_only",
+      "identifier_profile_mappings": [
+        {
+          "identifier_profile_id": "__default",
+          "attributes": [
+            "clientnummer"
+          ]
+        }
+      ],
+      "update_table_policy": "allow",
+      "share_table_cardinality_policy": "allow"
+    },
+    {
+      "name": "Marga Klompé zorgdata",
+      "source": {
+        "type": "csv",
+        "filename": "marga-klompé-zorgdata.csv"
+      },
+      "attributes": [
+        {
+          "column": "clientnummer",
+          "name": "Clientnummer",
+          "description": "Landelijk matchingnummer van de client.",
+          "type": "string",
+          "primary_key": false,
+          "not_null": true,
+          "foreign_key": {
+            "table": "Marga Klompé clienten",
+            "column": "clientnummer"
+          },
+          "select_policy": "deny",
+          "filter_policy": "deny"
+        },
+        {
+          "column": "wlz_start",
+          "name": "WLZ-startdatum",
+          "description": "Startdatum van de WLZ-periode zelf (NursingProcess + indicatie/profiel/vorm)",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "wlz_eind",
+          "name": "WLZ-einddatum",
+          "description": "Einddatum van de WLZ-periode zelf (NursingProcess + indicatie/profiel/vorm)",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "wlz_start_jaar",
+          "name": "Instroomjaar",
+          "description": "Jaar waarin de WLZ-periode begon.",
+          "type": "option",
+          "options": [
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "verblijfsduur_dagen",
+          "name": "Verblijfsduur (dagen)",
+          "description": "Duur van de WLZ-periode in dagen. Leeg bij een lopende periode, zodat die niet meetelt in een gemiddelde.",
+          "type": "int",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "verblijfsduur_klasse",
+          "name": "Verblijfsduurklasse",
+          "description": "Verblijfsduur in klassen.",
+          "type": "option",
+          "options": [
+            "\u003c1mnd",
+            "1-3mnd",
+            "3-6mnd",
+            "6-12mnd",
+            "1-2jr",
+            "\u003e2jr"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "zorgprofiel",
+          "name": "Zorgprofiel",
+          "description": "Zorgprofiel van de WLZ-periode zelf (NursingProcess + indicatie/profiel/vorm)",
+          "type": "option",
+          "options": [
+            "4VV",
+            "5VV",
+            "6VV",
+            "7VV",
+            "8VV",
+            "9BVV"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "leveringsvorm",
+          "name": "Leveringsvorm",
+          "description": "Leveringsvorm van de WLZ-periode zelf (NursingProcess + indicatie/profiel/vorm)",
+          "type": "option",
+          "options": [
+            "instelling",
+            "mpt",
+            "pgb",
+            "vpt"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "locatie",
+          "name": "Locatie",
+          "description": "Locatie van de WLZ-periode zelf (NursingProcess + indicatie/profiel/vorm)",
+          "type": "option",
+          "options": [
+            "Beth San",
+            "De Hoge Weide",
+            "De Molenberg",
+            "Hassinkhof",
+            "Het Ambthuis",
+            "Pronsweide"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "instroom_type",
+          "name": "Instroomtype",
+          "description": "Herkomst van de WLZ-periode, voor zover bekend bij deze organisatie. 'nieuw' betekent geen eerder zorgcontact bij deze organisatie; de client kan elders in zorg zijn geweest.",
+          "type": "option",
+          "options": [
+            "nieuw",
+            "eigen_zorgcontact",
+            "herindicatie",
+            "heropname"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "uitstroom_reden",
+          "name": "Uitstroomreden",
+          "description": "Reden van uitstroom, voor zover bekend bij deze organisatie. 'uitstroom_onbekend' betekent geen vervolgcontact hier; de client kan elders in zorg zijn gegaan.",
+          "type": "option",
+          "options": [
+            "nog_in_zorg",
+            "overleden",
+            "herindicatie",
+            "doorstroom_zorgcontact",
+            "uitstroom_onbekend"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "voor_start",
+          "name": "Startdatum vorig contact",
+          "description": "Startdatum laatste zorgcontact in de lookback window (100 dagen) voor start",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "voor_sector",
+          "name": "Sector vorig contact",
+          "description": "Codering laatste zorgcontact in de lookback window (100 dagen) voor start",
+          "type": "option",
+          "options": [
+            "VVT"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "voor_locatie",
+          "name": "Locatie vorig contact",
+          "description": "Locatie laatste zorgcontact in de lookback window (100 dagen) voor start",
+          "type": "option",
+          "options": [
+            "Marga Klompé Thuiszorg Groenlo",
+            "Marga Klompé Thuiszorg Winterswijk"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "na_start",
+          "name": "Startdatum volgend contact",
+          "description": "Startdatum eerste zorgcontact na afloop van de WLZ-periode",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "na_sector",
+          "name": "Sector volgend contact",
+          "description": "Codering eerste zorgcontact na afloop van de WLZ-periode",
+          "type": "option",
+          "options": [
+            "VVT"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "na_locatie",
+          "name": "Locatie volgend contact",
+          "description": "Locatie eerste zorgcontact na afloop van de WLZ-periodenl",
+          "type": "option",
+          "options": [
+            "Marga Klompé Thuiszorg Groenlo",
+            "Marga Klompé Thuiszorg Winterswijk"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "vorige_zorgprofiel",
+          "name": "Zorgprofiel vorige periode",
+          "description": "Zorgprofiel van zorgproces van dezelfde persoon dat direct voorafgaand aan deze WLZ-periode eindigde",
+          "type": "option",
+          "options": [
+            "4VV",
+            "6VV"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "vorige_wlz_eind",
+          "name": "Einddatum vorige periode",
+          "description": "Einddatum van zorgproces van dezelfde persoon dat direct voorafgaand aan deze WLZ-periode eindigde",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "vorige_locatie",
+          "name": "Locatie vorige periode",
+          "description": "Locatie van zorgproces van dezelfde persoon dat direct voorafgaand aan deze WLZ-periode eindigde",
+          "type": "option",
+          "options": [
+            "Beth San",
+            "De Hoge Weide",
+            "Het Ambthuis"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "volgende_zorgprofiel",
+          "name": "Zorgprofiel volgende periode",
+          "description": "Zorgprofiel van zorgproces van dezelfde persoon dat direct aansluit aan deze WLZ-periode",
+          "type": "option",
+          "options": [
+            "6VV",
+            "7VV"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "volgende_wlz_start",
+          "name": "Startdatum volgende periode",
+          "description": "Startdatum van zorgproces van dezelfde persoon dat direct aansluit aan deze WLZ-periode",
+          "type": "date",
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "aggregate_only",
+          "filter_policy": "allow_filter"
+        },
+        {
+          "column": "volgende_locatie",
+          "name": "Locatie volgende periode",
+          "description": "Locatie van zorgproces van dezelfde persoon dat direct aansluit aan deze WLZ-periode",
+          "type": "option",
+          "options": [
+            "Beth San",
+            "Hassinkhof",
+            "Het Ambthuis"
+          ],
+          "primary_key": false,
+          "not_null": false,
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        }
+      ],
+      "default_select_policy": "aggregate_only",
+      "update_table_policy": "allow",
+      "share_table_cardinality_policy": "allow"
+    }
+  ]
+}

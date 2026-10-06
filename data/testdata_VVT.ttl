@@ -1,0 +1,1491 @@
+@prefix dummy:    <http://data.dummyzorg.nl/> .
+@prefix onz-g:    <http://purl.org/ozo/onz-g#> .
+@prefix onz-zorg: <http://purl.org/ozo/onz-zorg#> .
+@prefix onz-org:  <http://purl.org/ozo/onz-org#> .
+@prefix ext:      <http://data.dummyzorg.nl/ext#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+################################
+# Ontologie-instanties
+################################
+
+onz-zorg:4VV  a onz-zorg:ZorgProfiel .
+onz-zorg:5VV  a onz-zorg:ZorgProfiel .
+onz-zorg:6VV  a onz-zorg:ZorgProfiel .
+onz-zorg:7VV  a onz-zorg:ZorgProfiel .
+onz-zorg:8VV  a onz-zorg:ZorgProfiel .
+onz-zorg:9BVV a onz-zorg:ZorgProfiel .
+onz-zorg:10VV a onz-zorg:ZorgProfiel .
+
+onz-zorg:pgb        a onz-zorg:Leveringsvorm .
+onz-zorg:vpt        a onz-zorg:Leveringsvorm .
+onz-zorg:mpt        a onz-zorg:Leveringsvorm .
+onz-zorg:instelling a onz-zorg:Leveringsvorm .
+
+ext:HACode  a owl:Class ; rdfs:subClassOf ext:ZorgCodering ; rdfs:label "Huisartsenzorg codering" .
+ext:MSZCode a owl:Class ; rdfs:subClassOf ext:ZorgCodering ; rdfs:label "Medisch Specialistische Zorg codering" .
+ext:VVTCode a owl:Class ; rdfs:subClassOf ext:ZorgCodering ; rdfs:label "VVT codering" .
+
+################################
+# Organisaties
+################################
+
+dummy:Organisatie_HZOIJ a onz-g:Business ; rdfs:label "HZOIJ" .
+
+dummy:Organisatie_Slingeland a onz-g:Business ; rdfs:label "Slingeland" .
+
+dummy:Organisatie_Sensire a onz-g:Business ; rdfs:label "Sensire" .
+
+dummy:Organisatie_Marga_Klompe a onz-g:Business ; rdfs:label "Marga Klompé" .
+
+################################
+# Vestigingen
+################################
+
+dummy:Vestiging_Huisartsenpraktijk_Varsseveld a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Varsseveld" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_Silvolde a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Silvolde" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpost Slingeland (Doetinchem)" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_Overstegen_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Overstegen (Doetinchem)" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Medisch_Centrum_Wehl a onz-org:Vestiging ;
+    rdfs:label          "Medisch Centrum Wehl" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk De Kruisberg (Doetinchem)" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_Zelhem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Zelhem" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Slingeland_Poli_Cardiologie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Cardiologie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Interne Geneeskunde" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Geriatrie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Geriatrie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Orthopedie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Orthopedie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Neurologie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Neurologie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_SEH a onz-org:Vestiging ;
+    rdfs:label          "Slingeland SEH" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Huisartsenpraktijk_Terborg a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Terborg" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Sensire_Wijkverpleging_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Sensire Wijkverpleging Doetinchem" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_Wijkverpleging_Varsseveld a onz-org:Vestiging ;
+    rdfs:label          "Sensire Wijkverpleging Varsseveld" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Huisartsenpraktijk_Ulft a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Ulft" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Slingeland_Afdeling_Geriatrie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Afdeling Geriatrie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Marga_Klompe_Thuiszorg_Groenlo a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé Thuiszorg Groenlo" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Thuiszorg_Winterswijk a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé Thuiszorg Winterswijk" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Sensire_Sydehem a onz-org:Vestiging ;
+    rdfs:label          "Sensire - Sydehem" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_De_Lunette a onz-org:Vestiging ;
+    rdfs:label          "Sensire - De Lunette" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_Den_Ooiman a onz-org:Vestiging ;
+    rdfs:label          "Sensire - Den Ooiman" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_De_Bundeling a onz-org:Vestiging ;
+    rdfs:label          "Sensire - De Bundeling" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Marga_Klompe_De_Molenberg a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - De Molenberg" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Pronsweide a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Pronsweide" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_De_Hoge_Weide a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - De Hoge Weide" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Het_Ambthuis a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Het Ambthuis" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Beth_San a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Beth San" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Hassinkhof a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Hassinkhof" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+################################
+# VVT zorgperioden
+################################
+
+# --- Nijman (300000001) ---
+
+dummy:Human_300000001 a onz-g:Human ;
+    rdfs:label           "Nijman" ;
+    onz-g:hasDateOfDeath "2022-06-29"^^xsd:date .
+
+dummy:Indicatie_WLZ_300000001_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000001 ;
+    onz-g:startDatum "2022-05-08"^^xsd:date ;
+    onz-g:eindDatum  "2022-06-29"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_300000001_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000001 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000001_1 ;
+    onz-g:startDatum              "2022-05-08"^^xsd:date ;
+    onz-g:eindDatum               "2022-06-29"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cornegoor (300000002) ---
+
+dummy:Human_300000002 a onz-g:Human ; rdfs:label "Cornegoor" .
+
+dummy:Indicatie_WLZ_300000002_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000002 ;
+    onz-g:startDatum "2025-01-18"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000002_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000002 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000002_1 ;
+    onz-g:startDatum              "2025-01-18"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- te Winkel (300000003) ---
+
+dummy:Human_300000003 a onz-g:Human ; rdfs:label "te Winkel" .
+
+dummy:Indicatie_WLZ_300000003_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000003 ;
+    onz-g:startDatum "2023-01-19"^^xsd:date ;
+    onz-g:eindDatum  "2023-03-12"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000003_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000003 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000003_1 ;
+    onz-g:startDatum              "2023-01-19"^^xsd:date ;
+    onz-g:eindDatum               "2023-03-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Cliënt 300000004 (300000004) ---
+
+dummy:Human_300000004 a onz-g:Human ;
+    rdfs:label           "Cliënt 300000004" ;
+    onz-g:hasDateOfDeath "2025-09-01"^^xsd:date .
+
+dummy:Indicatie_WLZ_300000004_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000004 ;
+    onz-g:startDatum "2025-08-08"^^xsd:date ;
+    onz-g:eindDatum  "2025-09-01"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_300000004_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000004 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000004_1 ;
+    onz-g:startDatum              "2025-08-08"^^xsd:date ;
+    onz-g:eindDatum               "2025-09-01"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Damkot (300000005) ---
+
+dummy:Human_300000005 a onz-g:Human ; rdfs:label "Damkot" .
+
+dummy:Indicatie_WLZ_300000005_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000005 ;
+    onz-g:startDatum "2023-08-30"^^xsd:date ;
+    onz-g:eindDatum  "2025-01-04"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_300000005_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000005 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000005_1 ;
+    onz-g:startDatum              "2023-08-30"^^xsd:date ;
+    onz-g:eindDatum               "2025-01-04"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+# --- Klein Holte (300000006) ---
+
+dummy:Human_300000006 a onz-g:Human ; rdfs:label "Klein Holte" .
+
+dummy:Indicatie_WLZ_300000006_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000006 ;
+    onz-g:startDatum "2023-06-06"^^xsd:date ;
+    onz-g:eindDatum  "2023-07-31"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_300000006_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000006 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000006_1 ;
+    onz-g:startDatum              "2023-06-06"^^xsd:date ;
+    onz-g:eindDatum               "2023-07-31"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Cliënt 300000007 (300000007) ---
+
+dummy:Human_300000007 a onz-g:Human ; rdfs:label "Cliënt 300000007" .
+
+dummy:Indicatie_WLZ_300000007_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000007 ;
+    onz-g:startDatum "2023-12-10"^^xsd:date ;
+    onz-g:eindDatum  "2026-05-25"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000007_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000007 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000007_1 ;
+    onz-g:startDatum              "2023-12-10"^^xsd:date ;
+    onz-g:eindDatum               "2026-05-25"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+# --- Cliënt 300000008 (300000008) ---
+
+dummy:Human_300000008 a onz-g:Human ; rdfs:label "Cliënt 300000008" .
+
+dummy:Indicatie_WLZ_300000008_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000008 ;
+    onz-g:startDatum "2023-06-25"^^xsd:date ;
+    onz-g:eindDatum  "2024-03-30"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000008_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000008 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000008_1 ;
+    onz-g:startDatum              "2023-06-25"^^xsd:date ;
+    onz-g:eindDatum               "2024-03-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cliënt 300000009 (300000009) ---
+
+dummy:Human_300000009 a onz-g:Human ; rdfs:label "Cliënt 300000009" .
+
+dummy:Indicatie_WLZ_300000009_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000009 ;
+    onz-g:startDatum "2022-06-01"^^xsd:date ;
+    onz-g:eindDatum  "2022-10-16"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000009_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000009 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000009_1 ;
+    onz-g:startDatum              "2022-06-01"^^xsd:date ;
+    onz-g:eindDatum               "2022-10-16"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cliënt 300000010 (300000010) ---
+
+dummy:Human_300000010 a onz-g:Human ; rdfs:label "Cliënt 300000010" .
+
+dummy:Indicatie_WLZ_300000010_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000010 ;
+    onz-g:startDatum "2024-09-10"^^xsd:date ;
+    onz-g:eindDatum  "2026-02-02"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000010_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000010 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000010_1 ;
+    onz-g:startDatum              "2024-09-10"^^xsd:date ;
+    onz-g:eindDatum               "2026-02-02"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cliënt 300000011 (300000011) ---
+
+dummy:Human_300000011 a onz-g:Human ; rdfs:label "Cliënt 300000011" .
+
+dummy:Indicatie_WLZ_300000011_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000011 ;
+    onz-g:startDatum "2022-07-31"^^xsd:date ;
+    onz-g:eindDatum  "2024-08-12"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000011_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000011 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000011_1 ;
+    onz-g:startDatum              "2022-07-31"^^xsd:date ;
+    onz-g:eindDatum               "2024-08-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+dummy:Indicatie_WLZ_300000011_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000011 ;
+    onz-g:startDatum "2025-09-13"^^xsd:date ;
+    onz-g:eindDatum  "2026-03-22"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000011_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000011 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000011_2 ;
+    onz-g:startDatum              "2025-09-13"^^xsd:date ;
+    onz-g:eindDatum               "2026-03-22"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Cliënt 300000012 (300000012) ---
+
+dummy:Human_300000012 a onz-g:Human ; rdfs:label "Cliënt 300000012" .
+
+dummy:Indicatie_WLZ_300000012_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000012 ;
+    onz-g:startDatum "2023-07-08"^^xsd:date ;
+    onz-g:eindDatum  "2023-09-05"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000012_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000012 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000012_1 ;
+    onz-g:startDatum              "2023-07-08"^^xsd:date ;
+    onz-g:eindDatum               "2023-09-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Cliënt 300000013 (300000013) ---
+
+dummy:Human_300000013 a onz-g:Human ; rdfs:label "Cliënt 300000013" .
+
+dummy:Indicatie_WLZ_300000013_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000013 ;
+    onz-g:startDatum "2023-12-19"^^xsd:date ;
+    onz-g:eindDatum  "2024-04-05"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:9BVV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000013_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000013 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000013_1 ;
+    onz-g:startDatum              "2023-12-19"^^xsd:date ;
+    onz-g:eindDatum               "2024-04-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Cliënt 300000014 (300000014) ---
+
+dummy:Human_300000014 a onz-g:Human ; rdfs:label "Cliënt 300000014" .
+
+dummy:Indicatie_WLZ_300000014_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000014 ;
+    onz-g:startDatum "2024-08-14"^^xsd:date ;
+    onz-g:eindDatum  "2024-11-21"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:9BVV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000014_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000014 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000014_1 ;
+    onz-g:startDatum              "2024-08-14"^^xsd:date ;
+    onz-g:eindDatum               "2024-11-21"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Cliënt 300000015 (300000015) ---
+
+dummy:Human_300000015 a onz-g:Human ; rdfs:label "Cliënt 300000015" .
+
+dummy:Indicatie_WLZ_300000015_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000015 ;
+    onz-g:startDatum "2023-01-23"^^xsd:date ;
+    onz-g:eindDatum  "2024-03-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_300000015_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000015 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000015_1 ;
+    onz-g:startDatum              "2023-01-23"^^xsd:date ;
+    onz-g:eindDatum               "2024-03-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Cliënt 300000016 (300000016) ---
+
+dummy:Human_300000016 a onz-g:Human ; rdfs:label "Cliënt 300000016" .
+
+dummy:Indicatie_WLZ_300000016_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000016 ;
+    onz-g:startDatum "2025-03-27"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000016_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000016 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000016_1 ;
+    onz-g:startDatum              "2025-03-27"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+# --- Cliënt 300000017 (300000017) ---
+
+dummy:Human_300000017 a onz-g:Human ; rdfs:label "Cliënt 300000017" .
+
+dummy:Indicatie_WLZ_300000017_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000017 ;
+    onz-g:startDatum "2023-05-31"^^xsd:date ;
+    onz-g:eindDatum  "2023-12-17"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_300000017_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000017 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000017_1 ;
+    onz-g:startDatum              "2023-05-31"^^xsd:date ;
+    onz-g:eindDatum               "2023-12-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+dummy:Indicatie_WLZ_300000017_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000017 ;
+    onz-g:startDatum "2024-12-30"^^xsd:date ;
+    onz-g:eindDatum  "2026-02-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000017_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000017 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000017_2 ;
+    onz-g:startDatum              "2024-12-30"^^xsd:date ;
+    onz-g:eindDatum               "2026-02-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Cliënt 300000018 (300000018) ---
+
+dummy:Human_300000018 a onz-g:Human ; rdfs:label "Cliënt 300000018" .
+
+dummy:Indicatie_WLZ_300000018_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000018 ;
+    onz-g:startDatum "2023-10-04"^^xsd:date ;
+    onz-g:eindDatum  "2023-11-18"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000018_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000018 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000018_1 ;
+    onz-g:startDatum              "2023-10-04"^^xsd:date ;
+    onz-g:eindDatum               "2023-11-18"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cliënt 300000019 (300000019) ---
+
+dummy:Human_300000019 a onz-g:Human ;
+    rdfs:label           "Cliënt 300000019" ;
+    onz-g:hasDateOfDeath "2024-08-30"^^xsd:date .
+
+dummy:Indicatie_WLZ_300000019_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000019 ;
+    onz-g:startDatum "2024-07-29"^^xsd:date ;
+    onz-g:eindDatum  "2024-08-30"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_300000019_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000019 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000019_1 ;
+    onz-g:startDatum              "2024-07-29"^^xsd:date ;
+    onz-g:eindDatum               "2024-08-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+# --- Jansen op de Haar (300000020) ---
+
+dummy:Human_300000020 a onz-g:Human ; rdfs:label "Jansen op de Haar" .
+
+dummy:Indicatie_WLZ_300000020_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000020 ;
+    onz-g:startDatum "2023-05-31"^^xsd:date ;
+    onz-g:eindDatum  "2023-07-28"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000020_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000020 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000020_1 ;
+    onz-g:startDatum              "2023-05-31"^^xsd:date ;
+    onz-g:eindDatum               "2023-07-28"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Mentink (300000021) ---
+
+dummy:Human_300000021 a onz-g:Human ; rdfs:label "Mentink" .
+
+dummy:Indicatie_WLZ_300000021_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000021 ;
+    onz-g:startDatum "2022-10-04"^^xsd:date ;
+    onz-g:eindDatum  "2025-05-14"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_300000021_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000021 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000021_1 ;
+    onz-g:startDatum              "2022-10-04"^^xsd:date ;
+    onz-g:eindDatum               "2025-05-14"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Stortelder (300000022) ---
+
+dummy:Human_300000022 a onz-g:Human ; rdfs:label "Stortelder" .
+
+dummy:Indicatie_WLZ_300000022_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000022 ;
+    onz-g:startDatum "2023-01-02"^^xsd:date ;
+    onz-g:eindDatum  "2024-02-15"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:4VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000022_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000022 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000022_1 ;
+    onz-g:startDatum              "2023-01-02"^^xsd:date ;
+    onz-g:eindDatum               "2024-02-15"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Cliënt 300000023 (300000023) ---
+
+dummy:Human_300000023 a onz-g:Human ; rdfs:label "Cliënt 300000023" .
+
+dummy:Indicatie_WLZ_300000023_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000023 ;
+    onz-g:startDatum "2025-10-21"^^xsd:date ;
+    onz-g:eindDatum  "2026-04-07"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000023_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000023 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000023_1 ;
+    onz-g:startDatum              "2025-10-21"^^xsd:date ;
+    onz-g:eindDatum               "2026-04-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Cliënt 300000024 (300000024) ---
+
+dummy:Human_300000024 a onz-g:Human ; rdfs:label "Cliënt 300000024" .
+
+dummy:Indicatie_WLZ_300000024_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000024 ;
+    onz-g:startDatum "2023-02-19"^^xsd:date ;
+    onz-g:eindDatum  "2023-03-22"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_300000024_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000024 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000024_1 ;
+    onz-g:startDatum              "2023-02-19"^^xsd:date ;
+    onz-g:eindDatum               "2023-03-22"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Lammers (300000025) ---
+
+dummy:Human_300000025 a onz-g:Human ; rdfs:label "Lammers" .
+
+dummy:Indicatie_WLZ_300000025_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000025 ;
+    onz-g:startDatum "2025-08-17"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000025_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000025 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000025_1 ;
+    onz-g:startDatum              "2025-08-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Nijenhuis (300000026) ---
+
+dummy:Human_300000026 a onz-g:Human ; rdfs:label "Nijenhuis" .
+
+dummy:Indicatie_WLZ_300000026_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000026 ;
+    onz-g:startDatum "2023-10-06"^^xsd:date ;
+    onz-g:eindDatum  "2024-04-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000026_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000026 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000026_1 ;
+    onz-g:startDatum              "2023-10-06"^^xsd:date ;
+    onz-g:eindDatum               "2024-04-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Lettink (300000027) ---
+
+dummy:Human_300000027 a onz-g:Human ; rdfs:label "Lettink" .
+
+dummy:Indicatie_WLZ_300000027_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000027 ;
+    onz-g:startDatum "2024-06-21"^^xsd:date ;
+    onz-g:eindDatum  "2026-01-06"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_300000027_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000027 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000027_1 ;
+    onz-g:startDatum              "2024-06-21"^^xsd:date ;
+    onz-g:eindDatum               "2026-01-06"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+# --- Abbink (300000028) ---
+
+dummy:Human_300000028 a onz-g:Human ; rdfs:label "Abbink" .
+
+dummy:Indicatie_WLZ_300000028_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000028 ;
+    onz-g:startDatum "2022-11-08"^^xsd:date ;
+    onz-g:eindDatum  "2025-09-28"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000028_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000028 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000028_1 ;
+    onz-g:startDatum              "2022-11-08"^^xsd:date ;
+    onz-g:eindDatum               "2025-09-28"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+# --- Ottink (300000029) ---
+
+dummy:Human_300000029 a onz-g:Human ; rdfs:label "Ottink" .
+
+dummy:Indicatie_WLZ_300000029_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000029 ;
+    onz-g:startDatum "2025-08-21"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000029_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000029 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000029_1 ;
+    onz-g:startDatum              "2025-08-21"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Luimes (300000030) ---
+
+dummy:Human_300000030 a onz-g:Human ; rdfs:label "Luimes" .
+
+dummy:Indicatie_WLZ_300000030_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000030 ;
+    onz-g:startDatum "2024-09-12"^^xsd:date ;
+    onz-g:eindDatum  "2025-09-07"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000030_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000030 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000030_1 ;
+    onz-g:startDatum              "2024-09-12"^^xsd:date ;
+    onz-g:eindDatum               "2025-09-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cliënt 300000031 (300000031) ---
+
+dummy:Human_300000031 a onz-g:Human ; rdfs:label "Cliënt 300000031" .
+
+dummy:Indicatie_WLZ_300000031_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000031 ;
+    onz-g:startDatum "2023-01-25"^^xsd:date ;
+    onz-g:eindDatum  "2024-03-17"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:4VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_300000031_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000031 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000031_1 ;
+    onz-g:startDatum              "2023-01-25"^^xsd:date ;
+    onz-g:eindDatum               "2024-03-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Den_Ooiman .
+
+dummy:Indicatie_WLZ_300000031_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000031 ;
+    onz-g:startDatum "2024-03-18"^^xsd:date ;
+    onz-g:eindDatum  "2025-09-21"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000031_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000031 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000031_2 ;
+    onz-g:startDatum              "2024-03-18"^^xsd:date ;
+    onz-g:eindDatum               "2025-09-21"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_Sydehem .
+
+# --- Cliënt 300000032 (300000032) ---
+
+dummy:Human_300000032 a onz-g:Human ; rdfs:label "Cliënt 300000032" .
+
+dummy:Indicatie_WLZ_300000032_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000032 ;
+    onz-g:startDatum "2022-04-21"^^xsd:date ;
+    onz-g:eindDatum  "2023-03-27"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000032_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000032 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000032_1 ;
+    onz-g:startDatum              "2022-04-21"^^xsd:date ;
+    onz-g:eindDatum               "2023-03-27"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+dummy:Indicatie_WLZ_300000032_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000032 ;
+    onz-g:startDatum "2023-03-28"^^xsd:date ;
+    onz-g:eindDatum  "2024-02-20"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000032_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000032 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000032_2 ;
+    onz-g:startDatum              "2023-03-28"^^xsd:date ;
+    onz-g:eindDatum               "2024-02-20"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Bundeling .
+
+# --- Cliënt 300000033 (300000033) ---
+
+dummy:Human_300000033 a onz-g:Human ; rdfs:label "Cliënt 300000033" .
+
+dummy:Indicatie_WLZ_300000033_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000033 ;
+    onz-g:startDatum "2022-05-30"^^xsd:date ;
+    onz-g:eindDatum  "2023-07-05"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:4VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000033_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000033 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000033_1 ;
+    onz-g:startDatum              "2022-05-30"^^xsd:date ;
+    onz-g:eindDatum               "2023-07-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+dummy:Indicatie_WLZ_300000033_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_300000033 ;
+    onz-g:startDatum "2023-07-06"^^xsd:date ;
+    onz-g:eindDatum  "2024-01-31"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_300000033_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_300000033 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_300000033_2 ;
+    onz-g:startDatum              "2023-07-06"^^xsd:date ;
+    onz-g:eindDatum               "2024-01-31"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Sensire_De_Lunette .
+
+# --- Cliënt 310000001 (310000001) ---
+
+dummy:Human_310000001 a onz-g:Human ; rdfs:label "Cliënt 310000001" .
+
+dummy:Indicatie_WLZ_310000001_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000001 ;
+    onz-g:startDatum "2025-10-22"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000001_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000001 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000001_1 ;
+    onz-g:startDatum              "2025-10-22"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Molenberg .
+
+# --- Cliënt 310000002 (310000002) ---
+
+dummy:Human_310000002 a onz-g:Human ; rdfs:label "Cliënt 310000002" .
+
+dummy:Indicatie_WLZ_310000002_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000002 ;
+    onz-g:startDatum "2022-02-17"^^xsd:date ;
+    onz-g:eindDatum  "2024-10-23"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000002_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000002 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000002_1 ;
+    onz-g:startDatum              "2022-02-17"^^xsd:date ;
+    onz-g:eindDatum               "2024-10-23"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+dummy:Indicatie_WLZ_310000002_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000002 ;
+    onz-g:startDatum "2025-12-31"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000002_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000002 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000002_2 ;
+    onz-g:startDatum              "2025-12-31"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Hoge_Weide .
+
+# --- Cliënt 310000003 (310000003) ---
+
+dummy:Human_310000003 a onz-g:Human ; rdfs:label "Cliënt 310000003" .
+
+dummy:Indicatie_WLZ_310000003_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000003 ;
+    onz-g:startDatum "2022-02-13"^^xsd:date ;
+    onz-g:eindDatum  "2022-10-04"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000003_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000003 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000003_1 ;
+    onz-g:startDatum              "2022-02-13"^^xsd:date ;
+    onz-g:eindDatum               "2022-10-04"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Molenberg .
+
+# --- Saalmink (310000004) ---
+
+dummy:Human_310000004 a onz-g:Human ; rdfs:label "Saalmink" .
+
+dummy:Indicatie_WLZ_310000004_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000004 ;
+    onz-g:startDatum "2023-05-20"^^xsd:date ;
+    onz-g:eindDatum  "2024-07-03"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:4VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000004_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000004 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000004_1 ;
+    onz-g:startDatum              "2023-05-20"^^xsd:date ;
+    onz-g:eindDatum               "2024-07-03"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Jolink (310000005) ---
+
+dummy:Human_310000005 a onz-g:Human ;
+    rdfs:label           "Jolink" ;
+    onz-g:hasDateOfDeath "2025-08-17"^^xsd:date .
+
+dummy:Indicatie_WLZ_310000005_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000005 ;
+    onz-g:startDatum "2024-09-16"^^xsd:date ;
+    onz-g:eindDatum  "2025-08-17"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_310000005_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000005 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000005_1 ;
+    onz-g:startDatum              "2024-09-16"^^xsd:date ;
+    onz-g:eindDatum               "2025-08-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Cliënt 310000006 (310000006) ---
+
+dummy:Human_310000006 a onz-g:Human ; rdfs:label "Cliënt 310000006" .
+
+dummy:Indicatie_WLZ_310000006_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000006 ;
+    onz-g:startDatum "2022-03-31"^^xsd:date ;
+    onz-g:eindDatum  "2022-05-08"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000006_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000006 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000006_1 ;
+    onz-g:startDatum              "2022-03-31"^^xsd:date ;
+    onz-g:eindDatum               "2022-05-08"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Cliënt 310000007 (310000007) ---
+
+dummy:Human_310000007 a onz-g:Human ; rdfs:label "Cliënt 310000007" .
+
+dummy:Indicatie_WLZ_310000007_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000007 ;
+    onz-g:startDatum "2023-08-18"^^xsd:date ;
+    onz-g:eindDatum  "2025-09-22"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000007_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000007 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000007_1 ;
+    onz-g:startDatum              "2023-08-18"^^xsd:date ;
+    onz-g:eindDatum               "2025-09-22"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Beth_San .
+
+# --- Navis (310000008) ---
+
+dummy:Human_310000008 a onz-g:Human ; rdfs:label "Navis" .
+
+dummy:Indicatie_WLZ_310000008_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000008 ;
+    onz-g:startDatum "2022-08-01"^^xsd:date ;
+    onz-g:eindDatum  "2023-09-04"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000008_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000008 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000008_1 ;
+    onz-g:startDatum              "2022-08-01"^^xsd:date ;
+    onz-g:eindDatum               "2023-09-04"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Cliënt 310000009 (310000009) ---
+
+dummy:Human_310000009 a onz-g:Human ; rdfs:label "Cliënt 310000009" .
+
+dummy:Indicatie_WLZ_310000009_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000009 ;
+    onz-g:startDatum "2024-10-20"^^xsd:date ;
+    onz-g:eindDatum  "2025-08-13"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000009_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000009 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000009_1 ;
+    onz-g:startDatum              "2024-10-20"^^xsd:date ;
+    onz-g:eindDatum               "2025-08-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Ruesink (310000010) ---
+
+dummy:Human_310000010 a onz-g:Human ; rdfs:label "Ruesink" .
+
+dummy:Indicatie_WLZ_310000010_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000010 ;
+    onz-g:startDatum "2024-09-30"^^xsd:date ;
+    onz-g:eindDatum  "2026-03-23"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000010_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000010 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000010_1 ;
+    onz-g:startDatum              "2024-09-30"^^xsd:date ;
+    onz-g:eindDatum               "2026-03-23"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Molenberg .
+
+# --- Cliënt 310000011 (310000011) ---
+
+dummy:Human_310000011 a onz-g:Human ; rdfs:label "Cliënt 310000011" .
+
+dummy:Indicatie_WLZ_310000011_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000011 ;
+    onz-g:startDatum "2025-10-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_310000011_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000011 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000011_1 ;
+    onz-g:startDatum              "2025-10-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Geerdink (310000012) ---
+
+dummy:Human_310000012 a onz-g:Human ; rdfs:label "Geerdink" .
+
+dummy:Indicatie_WLZ_310000012_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000012 ;
+    onz-g:startDatum "2025-01-16"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000012_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000012 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000012_1 ;
+    onz-g:startDatum              "2025-01-16"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Lubbers (310000013) ---
+
+dummy:Human_310000013 a onz-g:Human ; rdfs:label "Lubbers" .
+
+dummy:Indicatie_WLZ_310000013_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000013 ;
+    onz-g:startDatum "2022-01-20"^^xsd:date ;
+    onz-g:eindDatum  "2022-05-18"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:9BVV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000013_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000013 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000013_1 ;
+    onz-g:startDatum              "2022-01-20"^^xsd:date ;
+    onz-g:eindDatum               "2022-05-18"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Beth_San .
+
+# --- Leemreis (310000014) ---
+
+dummy:Human_310000014 a onz-g:Human ; rdfs:label "Leemreis" .
+
+dummy:Indicatie_WLZ_310000014_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000014 ;
+    onz-g:startDatum "2023-12-16"^^xsd:date ;
+    onz-g:eindDatum  "2024-12-13"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000014_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000014 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000014_1 ;
+    onz-g:startDatum              "2023-12-16"^^xsd:date ;
+    onz-g:eindDatum               "2024-12-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Zieverink (310000015) ---
+
+dummy:Human_310000015 a onz-g:Human ; rdfs:label "Zieverink" .
+
+dummy:Indicatie_WLZ_310000015_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000015 ;
+    onz-g:startDatum "2022-07-12"^^xsd:date ;
+    onz-g:eindDatum  "2022-12-30"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_310000015_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000015 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000015_1 ;
+    onz-g:startDatum              "2022-07-12"^^xsd:date ;
+    onz-g:eindDatum               "2022-12-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Hassinkhof .
+
+# --- Tankink (310000016) ---
+
+dummy:Human_310000016 a onz-g:Human ; rdfs:label "Tankink" .
+
+dummy:Indicatie_WLZ_310000016_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000016 ;
+    onz-g:startDatum "2024-05-10"^^xsd:date ;
+    onz-g:eindDatum  "2025-09-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000016_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000016 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000016_1 ;
+    onz-g:startDatum              "2024-05-10"^^xsd:date ;
+    onz-g:eindDatum               "2025-09-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Groot Zevert (310000017) ---
+
+dummy:Human_310000017 a onz-g:Human ;
+    rdfs:label           "Groot Zevert" ;
+    onz-g:hasDateOfDeath "2023-07-19"^^xsd:date .
+
+dummy:Indicatie_WLZ_310000017_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000017 ;
+    onz-g:startDatum "2022-07-18"^^xsd:date ;
+    onz-g:eindDatum  "2023-07-19"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:vpt .
+
+dummy:NursingProcess_310000017_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000017 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000017_1 ;
+    onz-g:startDatum              "2022-07-18"^^xsd:date ;
+    onz-g:eindDatum               "2023-07-19"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Cliënt 310000018 (310000018) ---
+
+dummy:Human_310000018 a onz-g:Human ; rdfs:label "Cliënt 310000018" .
+
+dummy:Indicatie_WLZ_310000018_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000018 ;
+    onz-g:startDatum "2024-01-17"^^xsd:date ;
+    onz-g:eindDatum  "2025-05-01"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000018_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000018 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000018_1 ;
+    onz-g:startDatum              "2024-01-17"^^xsd:date ;
+    onz-g:eindDatum               "2025-05-01"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Hassinkhof .
+
+# --- Cliënt 310000019 (310000019) ---
+
+dummy:Human_310000019 a onz-g:Human ; rdfs:label "Cliënt 310000019" .
+
+dummy:Indicatie_WLZ_310000019_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000019 ;
+    onz-g:startDatum "2025-11-02"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000019_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000019 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000019_1 ;
+    onz-g:startDatum              "2025-11-02"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Hassinkhof .
+
+# --- Wisselink (310000020) ---
+
+dummy:Human_310000020 a onz-g:Human ;
+    rdfs:label           "Wisselink" ;
+    onz-g:hasDateOfDeath "2025-12-31"^^xsd:date .
+
+dummy:Indicatie_WLZ_310000020_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000020 ;
+    onz-g:startDatum "2022-12-14"^^xsd:date ;
+    onz-g:eindDatum  "2025-12-31"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000020_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000020 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000020_1 ;
+    onz-g:startDatum              "2022-12-14"^^xsd:date ;
+    onz-g:eindDatum               "2025-12-31"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Molenberg .
+
+# --- ter Maat (310000021) ---
+
+dummy:Human_310000021 a onz-g:Human ; rdfs:label "ter Maat" .
+
+dummy:Indicatie_WLZ_310000021_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000021 ;
+    onz-g:startDatum "2025-08-14"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_310000021_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000021 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000021_1 ;
+    onz-g:startDatum              "2025-08-14"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Cliënt 310000022 (310000022) ---
+
+dummy:Human_310000022 a onz-g:Human ; rdfs:label "Cliënt 310000022" .
+
+dummy:Indicatie_WLZ_310000022_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000022 ;
+    onz-g:startDatum "2024-03-15"^^xsd:date ;
+    onz-g:eindDatum  "2024-07-19"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_310000022_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000022 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000022_1 ;
+    onz-g:startDatum              "2024-03-15"^^xsd:date ;
+    onz-g:eindDatum               "2024-07-19"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Cliënt 310000023 (310000023) ---
+
+dummy:Human_310000023 a onz-g:Human ; rdfs:label "Cliënt 310000023" .
+
+dummy:Indicatie_WLZ_310000023_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000023 ;
+    onz-g:startDatum "2024-04-05"^^xsd:date ;
+    onz-g:eindDatum  "2026-02-25"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:pgb .
+
+dummy:NursingProcess_310000023_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000023 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000023_1 ;
+    onz-g:startDatum              "2024-04-05"^^xsd:date ;
+    onz-g:eindDatum               "2026-02-25"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Hassinkhof .
+
+# --- Veldkamp (310000024) ---
+
+dummy:Human_310000024 a onz-g:Human ; rdfs:label "Veldkamp" .
+
+dummy:Indicatie_WLZ_310000024_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000024 ;
+    onz-g:startDatum "2024-10-09"^^xsd:date ;
+    onz-g:eindDatum  "2025-02-17"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000024_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000024 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000024_1 ;
+    onz-g:startDatum              "2024-10-09"^^xsd:date ;
+    onz-g:eindDatum               "2025-02-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Hoge_Weide .
+
+# --- Cliënt 310000025 (310000025) ---
+
+dummy:Human_310000025 a onz-g:Human ; rdfs:label "Cliënt 310000025" .
+
+dummy:Indicatie_WLZ_310000025_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000025 ;
+    onz-g:startDatum "2022-11-18"^^xsd:date ;
+    onz-g:eindDatum  "2024-01-11"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:5VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000025_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000025 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000025_1 ;
+    onz-g:startDatum              "2022-11-18"^^xsd:date ;
+    onz-g:eindDatum               "2024-01-11"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+dummy:Indicatie_WLZ_310000025_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000025 ;
+    onz-g:startDatum "2024-11-26"^^xsd:date ;
+    onz-g:eindDatum  "2025-01-07"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000025_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000025 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000025_2 ;
+    onz-g:startDatum              "2024-11-26"^^xsd:date ;
+    onz-g:eindDatum               "2025-01-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Molenberg .
+
+# --- Cliënt 310000026 (310000026) ---
+
+dummy:Human_310000026 a onz-g:Human ;
+    rdfs:label           "Cliënt 310000026" ;
+    onz-g:hasDateOfDeath "2022-03-07"^^xsd:date .
+
+dummy:Indicatie_WLZ_310000026_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000026 ;
+    onz-g:startDatum "2022-01-29"^^xsd:date ;
+    onz-g:eindDatum  "2022-03-07"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_310000026_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000026 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000026_1 ;
+    onz-g:startDatum              "2022-01-29"^^xsd:date ;
+    onz-g:eindDatum               "2022-03-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Beth_San .
+
+# --- Cliënt 310000027 (310000027) ---
+
+dummy:Human_310000027 a onz-g:Human ; rdfs:label "Cliënt 310000027" .
+
+dummy:Indicatie_WLZ_310000027_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000027 ;
+    onz-g:startDatum "2024-05-16"^^xsd:date ;
+    onz-g:eindDatum  "2024-09-30"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000027_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000027 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000027_1 ;
+    onz-g:startDatum              "2024-05-16"^^xsd:date ;
+    onz-g:eindDatum               "2024-09-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Cliënt 310000028 (310000028) ---
+
+dummy:Human_310000028 a onz-g:Human ; rdfs:label "Cliënt 310000028" .
+
+dummy:Indicatie_WLZ_310000028_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000028 ;
+    onz-g:startDatum "2023-06-13"^^xsd:date ;
+    onz-g:eindDatum  "2024-10-29"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:8VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_310000028_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000028 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000028_1 ;
+    onz-g:startDatum              "2023-06-13"^^xsd:date ;
+    onz-g:eindDatum               "2024-10-29"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Hummelink (310000029) ---
+
+dummy:Human_310000029 a onz-g:Human ; rdfs:label "Hummelink" .
+
+dummy:Indicatie_WLZ_310000029_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000029 ;
+    onz-g:startDatum "2024-06-08"^^xsd:date ;
+    onz-g:eindDatum  "2025-08-24"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000029_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000029 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000029_1 ;
+    onz-g:startDatum              "2024-06-08"^^xsd:date ;
+    onz-g:eindDatum               "2025-08-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Cliënt 310000030 (310000030) ---
+
+dummy:Human_310000030 a onz-g:Human ; rdfs:label "Cliënt 310000030" .
+
+dummy:Indicatie_WLZ_310000030_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000030 ;
+    onz-g:startDatum "2023-04-02"^^xsd:date ;
+    onz-g:eindDatum  "2023-06-06"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:9BVV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000030_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000030 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000030_1 ;
+    onz-g:startDatum              "2023-04-02"^^xsd:date ;
+    onz-g:eindDatum               "2023-06-06"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Pronsweide .
+
+# --- Cliënt 310000031 (310000031) ---
+
+dummy:Human_310000031 a onz-g:Human ; rdfs:label "Cliënt 310000031" .
+
+dummy:Indicatie_WLZ_310000031_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000031 ;
+    onz-g:startDatum "2022-04-05"^^xsd:date ;
+    onz-g:eindDatum  "2023-01-20"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:mpt .
+
+dummy:NursingProcess_310000031_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000031 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000031_1 ;
+    onz-g:startDatum              "2022-04-05"^^xsd:date ;
+    onz-g:eindDatum               "2023-01-20"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+dummy:Indicatie_WLZ_310000031_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000031 ;
+    onz-g:startDatum "2023-01-21"^^xsd:date ;
+    onz-g:eindDatum  "2023-06-24"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:7VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000031_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000031 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000031_2 ;
+    onz-g:startDatum              "2023-01-21"^^xsd:date ;
+    onz-g:eindDatum               "2023-06-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Het_Ambthuis .
+
+# --- Cliënt 310000032 (310000032) ---
+
+dummy:Human_310000032 a onz-g:Human ; rdfs:label "Cliënt 310000032" .
+
+dummy:Indicatie_WLZ_310000032_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000032 ;
+    onz-g:startDatum "2023-10-10"^^xsd:date ;
+    onz-g:eindDatum  "2024-12-30"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:4VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000032_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000032 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000032_1 ;
+    onz-g:startDatum              "2023-10-10"^^xsd:date ;
+    onz-g:eindDatum               "2024-12-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_De_Hoge_Weide .
+
+dummy:Indicatie_WLZ_310000032_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000032 ;
+    onz-g:startDatum "2024-12-31"^^xsd:date ;
+    onz-g:eindDatum  "2025-11-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000032_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000032 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000032_2 ;
+    onz-g:startDatum              "2024-12-31"^^xsd:date ;
+    onz-g:eindDatum               "2025-11-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Hassinkhof .
+
+# --- Cliënt 310000033 (310000033) ---
+
+dummy:Human_310000033 a onz-g:Human ; rdfs:label "Cliënt 310000033" .
+
+dummy:Indicatie_WLZ_310000033_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000033 ;
+    onz-g:startDatum "2023-12-27"^^xsd:date ;
+    onz-g:eindDatum  "2024-06-26"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:4VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000033_1 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000033 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000033_1 ;
+    onz-g:startDatum              "2023-12-27"^^xsd:date ;
+    onz-g:eindDatum               "2024-06-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Beth_San .
+
+dummy:Indicatie_WLZ_310000033_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout    dummy:Human_310000033 ;
+    onz-g:startDatum "2024-06-27"^^xsd:date ;
+    onz-g:eindDatum  "2025-03-09"^^xsd:date ;
+    onz-g:hasPart    onz-zorg:6VV ;
+    onz-g:hasPart    onz-zorg:instelling .
+
+dummy:NursingProcess_310000033_2 a onz-zorg:NursingProcess ;
+    onz-g:hasParticipant          dummy:Human_310000033 ;
+    onz-g:definedBy               dummy:Indicatie_WLZ_310000033_2 ;
+    onz-g:startDatum              "2024-06-27"^^xsd:date ;
+    onz-g:eindDatum               "2025-03-09"^^xsd:date ;
+    onz-g:hasPerdurantLocation    dummy:Vestiging_Marga_Klompe_Beth_San .

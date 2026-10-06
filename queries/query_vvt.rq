@@ -1,0 +1,30 @@
+PREFIX onz-g:    <http://purl.org/ozo/onz-g#>
+PREFIX onz-zorg: <http://purl.org/ozo/onz-zorg#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?clientnummer ?persoon ?startDatum ?einddatum ?locatie ?zorgprofiel ?leveringsvorm ?overlijdensdatum
+WHERE {
+    ?human a onz-g:Human ;
+           rdfs:label ?persoon .
+
+    ?np a onz-zorg:NursingProcess ;
+        onz-g:hasParticipant ?human ;
+        onz-g:startDatum ?startDatum ;
+        onz-g:hasPerdurantLocation/rdfs:label ?locatie ;
+        onz-g:definedBy ?ind .
+
+    OPTIONAL { ?np onz-g:eindDatum ?einddatum }
+    OPTIONAL { ?human onz-g:hasDateOfDeath ?overlijdensdatum }
+
+    ?ind onz-g:hasPart ?zp .
+    ?zp a onz-zorg:ZorgProfiel .
+    BIND(STRAFTER(STR(?zp), "#") AS ?zorgprofiel)
+
+    ?ind onz-g:hasPart ?lv .
+    ?lv a onz-zorg:Leveringsvorm .
+    BIND(STRAFTER(STR(?lv), "#") AS ?leveringsvorm)
+
+    BIND(STRAFTER(STR(?human), "Human_") AS ?clientnummer)
+}
+ORDER BY ?clientnummer ?startDatum

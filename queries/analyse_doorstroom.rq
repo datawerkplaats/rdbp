@@ -1,0 +1,42 @@
+PREFIX onz-g:    <http://purl.org/ozo/onz-g#>
+PREFIX onz-zorg: <http://purl.org/ozo/onz-zorg#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+# Doorstroom: aansluitende intramurale periodes van dezelfde client met een ander zorgprofiel.
+# De volgende periode begint binnen 14 dagen na het einde van de vorige.
+# Levert doorstroom.csv op (testdata_VVT.ttl).
+SELECT ?soortDoorstroom ?van ?naar (COUNT(DISTINCT ?persoon) AS ?aantalClienten)
+WHERE {
+    ?np1 a onz-zorg:NursingProcess ;
+         onz-g:hasParticipant ?persoon ;
+         onz-g:definedBy ?ind1 ;
+         onz-g:eindDatum ?eind1 ;
+         onz-g:hasPerdurantLocation/rdfs:label ?locatie1 .
+    FILTER(STRSTARTS(?locatie1, "Sensire - "))
+    ?ind1 onz-g:hasPart ?zp1 .
+    ?zp1 a onz-zorg:ZorgProfiel .
+
+    ?np2 a onz-zorg:NursingProcess ;
+         onz-g:hasParticipant ?persoon ;
+         onz-g:definedBy ?ind2 ;
+         onz-g:startDatum ?start2 .
+    FILTER(?start2 > ?eind1 && ?start2 <= ?eind1 + "P14D"^^xsd:dayTimeDuration)
+    ?ind2 onz-g:hasPart ?zp2 .
+    ?zp2 a onz-zorg:ZorgProfiel .
+    FILTER(?zp1 != ?zp2)
+
+    # np2 is de direct volgende periode
+    FILTER NOT EXISTS {
+        ?tussen a onz-zorg:NursingProcess ;
+                onz-g:hasParticipant ?persoon ;
+                onz-g:startDatum ?tussenStart .
+        FILTER(?tussenStart > ?eind1 && ?tussenStart < ?start2)
+    }
+
+    BIND("herindicatie" AS ?soortDoorstroom)
+    BIND(LCASE(STRAFTER(STR(?zp1), "#")) AS ?van)
+    BIND(LCASE(STRAFTER(STR(?zp2), "#")) AS ?naar)
+}
+GROUP BY ?soortDoorstroom ?van ?naar
+ORDER BY ?van ?naar

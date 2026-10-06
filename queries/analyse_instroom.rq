@@ -1,0 +1,46 @@
+PREFIX onz-g:    <http://purl.org/ozo/onz-g#>
+PREFIX onz-org:  <http://purl.org/ozo/onz-org#>
+PREFIX onz-zorg: <http://purl.org/ozo/onz-zorg#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+# Instroom: laatste zorgcontact binnen 100 dagen voor de start van een intramurale periode.
+# Levert instroom.csv op (testdata_HA_MSZ.ttl + testdata_VVT.ttl samen laden).
+SELECT ?organisatieInstroom ?locatieInstroom ?locatieIntramuraal ?indicatieIntramuraal (COUNT(DISTINCT ?persoon) AS ?aantalClienten)
+WHERE {
+    ?np a onz-zorg:NursingProcess ;
+        onz-g:hasParticipant ?persoon ;
+        onz-g:definedBy ?ind ;
+        onz-g:startDatum ?start ;
+        onz-g:hasPerdurantLocation/rdfs:label ?locatieIntramuraal .
+    FILTER(STRSTARTS(?locatieIntramuraal, "Sensire - "))
+
+    ?ind onz-g:hasPart ?zp .
+    ?zp a onz-zorg:ZorgProfiel .
+    BIND(STRAFTER(STR(?zp), "#") AS ?indicatieIntramuraal)
+
+    ?voor a onz-zorg:ZorgProces ;
+          onz-g:hasParticipant ?persoon ;
+          onz-g:startDatum ?voorStart ;
+          onz-g:hasPerdurantLocation ?vestigingInstroom .
+    ?vestigingInstroom rdfs:label ?locatieInstroom .
+    OPTIONAL { ?vestigingInstroom onz-org:vestigingVan/rdfs:label ?organisatieInstroom }
+    FILTER(?voorStart < ?start && ?voorStart >= ?start - "P100D"^^xsd:dayTimeDuration)
+
+    # alleen het laatste contact voor de start
+    FILTER NOT EXISTS {
+        ?ander a onz-zorg:ZorgProces ;
+               onz-g:hasParticipant ?persoon ;
+               onz-g:startDatum ?anderStart .
+        FILTER(?anderStart > ?voorStart && ?anderStart < ?start)
+    }
+    # geen instroom als de client tussendoor al intramuraal verbleef (doorstroom)
+    FILTER NOT EXISTS {
+        ?eerder a onz-zorg:NursingProcess ;
+                onz-g:hasParticipant ?persoon ;
+                onz-g:eindDatum ?eerderEind .
+        FILTER(?eerderEind >= ?voorStart && ?eerderEind < ?start)
+    }
+}
+GROUP BY ?organisatieInstroom ?locatieInstroom ?locatieIntramuraal ?indicatieIntramuraal
+ORDER BY ?organisatieInstroom ?locatieIntramuraal ?indicatieIntramuraal ?locatieInstroom

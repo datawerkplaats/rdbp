@@ -1,0 +1,145 @@
+{
+  "$schema": "https://schema.linksight.network/metadata/v5.0/schema.json",
+  "version": "5.0",
+  "name": "Slingeland Ziekenhuis - Regionaal Databeschikbaarheidsprofiel mock-up brondata",
+  "description": "Mock-up zorgcontacten polikliniek, SEH en geriatrie (MSZ, Achterhoek)",
+  "single_dataset_query_policy": "allow_owner",
+  "tables": [
+    {
+      "name": "Slingeland Ziekenhuis clienten",
+      "source": {
+        "type": "csv",
+        "filename": "slingeland_msz_clienten.csv"
+      },
+      "share_table_cardinality_policy": "allow",
+      "update_table_policy": "allow",
+      "attributes": [
+        {
+          "column": "clientnummer",
+          "name": "Clientnummer",
+          "description": "Landelijk matchingnummer van de client; hetzelfde nummer wordt in de andere datastations gebruikt",
+          "type": "string",
+          "primary_key": true,
+          "select_policy": "deny",
+          "filter_policy": "deny"
+        },
+        {
+          "column": "persoon",
+          "name": "Naam",
+          "description": "Achternaam van de client",
+          "type": "string",
+          "select_policy": "deny",
+          "filter_policy": "deny"
+        },
+        {
+          "column": "overleden",
+          "name": "Overleden",
+          "description": "Of er bij deze organisatie een overlijdensdatum bekend is",
+          "type": "option",
+          "options": [
+            "ja",
+            "nee"
+          ],
+          "select_policy": "deny",
+          "filter_policy": "allow_group_by"
+        }
+      ],
+      "identifier_profile_mappings": [
+        {
+          "identifier_profile_id": "__default",
+          "attributes": [
+            "clientnummer"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slingeland Ziekenhuis zorgdata",
+      "source": {
+        "type": "csv",
+        "filename": "slingeland_msz.csv"
+      },
+      "share_table_cardinality_policy": "allow",
+      "update_table_policy": "allow",
+      "attributes": [
+        {
+          "column": "clientnummer",
+          "name": "Clientnummer",
+          "description": "Landelijk matchingnummer van de client; hetzelfde nummer wordt in de andere datastations gebruikt",
+          "type": "string",
+          "foreign_key": {
+            "table": "Slingeland Ziekenhuis clienten",
+            "column": "clientnummer"
+          },
+          "select_policy": "deny",
+          "filter_policy": "deny"
+        },
+        {
+          "column": "naam",
+          "name": "Naam",
+          "description": "Achternaam van de client",
+          "type": "string",
+          "select_policy": "deny",
+          "filter_policy": "deny"
+        },
+        {
+          "column": "startdatum",
+          "name": "Startdatum",
+          "description": "Startdatum van het zorgcontact of van de WLZ-periode",
+          "type": "date",
+          "filter_policy": "allow_filter_not_exact"
+        },
+        {
+          "column": "locatie",
+          "name": "Locatie",
+          "description": "Locatie waar de zorg geleverd wordt",
+          "type": "option",
+          "options": [
+            "Slingeland Afdeling Geriatrie",
+            "Slingeland Poli Cardiologie",
+            "Slingeland Poli Geriatrie",
+            "Slingeland Poli Interne Geneeskunde",
+            "Slingeland Poli Neurologie",
+            "Slingeland Poli Orthopedie",
+            "Slingeland SEH"
+          ],
+          "select_policy": "allow",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "indicatie",
+          "name": "Indicatie",
+          "description": "Wettelijk kader van de zorg (ZVW, WMO, WLZ); '-' als er geen indicatie bekend is",
+          "type": "option",
+          "options": [
+            "-",
+            "Indicatiebesluit partnerverblijf",
+            "WLZ",
+            "WMO",
+            "ZVW"
+          ],
+          "select_policy": "allow",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "sector",
+          "name": "Sector",
+          "description": "Sector van het zorgcontact; in dit datastation altijd MSZ (medisch-specialistische zorg)",
+          "type": "option",
+          "options": [
+            "MSZ"
+          ],
+          "select_policy": "allow",
+          "filter_policy": "allow_group_by"
+        },
+        {
+          "column": "overlijdensdatum",
+          "name": "Overlijdensdatum",
+          "description": "Overlijdensdatum van de client; alleen gevuld in het datastation waar de client het laatst in zorg was",
+          "type": "date",
+          "filter_policy": "allow_filter_not_exact"
+        }
+      ]
+    }
+  ]
+}

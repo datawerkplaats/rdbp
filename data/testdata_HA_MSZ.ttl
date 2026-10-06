@@ -1,0 +1,1493 @@
+@prefix dummy:    <http://data.dummyzorg.nl/> .
+@prefix onz-g:    <http://purl.org/ozo/onz-g#> .
+@prefix onz-zorg: <http://purl.org/ozo/onz-zorg#> .
+@prefix onz-org:  <http://purl.org/ozo/onz-org#> .
+@prefix ext:      <http://data.dummyzorg.nl/ext#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+################################
+# Ontologie-instanties
+################################
+
+onz-zorg:4VV  a onz-zorg:ZorgProfiel .
+onz-zorg:5VV  a onz-zorg:ZorgProfiel .
+onz-zorg:6VV  a onz-zorg:ZorgProfiel .
+onz-zorg:7VV  a onz-zorg:ZorgProfiel .
+onz-zorg:8VV  a onz-zorg:ZorgProfiel .
+onz-zorg:9BVV a onz-zorg:ZorgProfiel .
+onz-zorg:10VV a onz-zorg:ZorgProfiel .
+
+onz-zorg:pgb        a onz-zorg:Leveringsvorm .
+onz-zorg:vpt        a onz-zorg:Leveringsvorm .
+onz-zorg:mpt        a onz-zorg:Leveringsvorm .
+onz-zorg:instelling a onz-zorg:Leveringsvorm .
+
+ext:HACode  a owl:Class ; rdfs:subClassOf ext:ZorgCodering ; rdfs:label "Huisartsenzorg codering" .
+ext:MSZCode a owl:Class ; rdfs:subClassOf ext:ZorgCodering ; rdfs:label "Medisch Specialistische Zorg codering" .
+ext:VVTCode a owl:Class ; rdfs:subClassOf ext:ZorgCodering ; rdfs:label "VVT codering" .
+
+################################
+# Organisaties
+################################
+
+dummy:Organisatie_HZOIJ a onz-g:Business ; rdfs:label "HZOIJ" .
+
+dummy:Organisatie_Slingeland a onz-g:Business ; rdfs:label "Slingeland" .
+
+dummy:Organisatie_Sensire a onz-g:Business ; rdfs:label "Sensire" .
+
+dummy:Organisatie_Marga_Klompe a onz-g:Business ; rdfs:label "Marga Klompé" .
+
+################################
+# Vestigingen
+################################
+
+dummy:Vestiging_Huisartsenpraktijk_Varsseveld a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Varsseveld" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_Silvolde a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Silvolde" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpost Slingeland (Doetinchem)" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_Overstegen_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Overstegen (Doetinchem)" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Medisch_Centrum_Wehl a onz-org:Vestiging ;
+    rdfs:label          "Medisch Centrum Wehl" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk De Kruisberg (Doetinchem)" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Huisartsenpraktijk_Zelhem a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Zelhem" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Slingeland_Poli_Cardiologie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Cardiologie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Interne Geneeskunde" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Geriatrie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Geriatrie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Orthopedie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Orthopedie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_Poli_Neurologie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Poli Neurologie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Slingeland_SEH a onz-org:Vestiging ;
+    rdfs:label          "Slingeland SEH" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Huisartsenpraktijk_Terborg a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Terborg" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Sensire_Wijkverpleging_Doetinchem a onz-org:Vestiging ;
+    rdfs:label          "Sensire Wijkverpleging Doetinchem" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_Wijkverpleging_Varsseveld a onz-org:Vestiging ;
+    rdfs:label          "Sensire Wijkverpleging Varsseveld" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Huisartsenpraktijk_Ulft a onz-org:Vestiging ;
+    rdfs:label          "Huisartsenpraktijk Ulft" ;
+    onz-org:vestigingVan dummy:Organisatie_HZOIJ .
+
+dummy:Vestiging_Slingeland_Afdeling_Geriatrie a onz-org:Vestiging ;
+    rdfs:label          "Slingeland Afdeling Geriatrie" ;
+    onz-org:vestigingVan dummy:Organisatie_Slingeland .
+
+dummy:Vestiging_Marga_Klompe_Thuiszorg_Groenlo a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé Thuiszorg Groenlo" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Thuiszorg_Winterswijk a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé Thuiszorg Winterswijk" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Sensire_Sydehem a onz-org:Vestiging ;
+    rdfs:label          "Sensire - Sydehem" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_De_Lunette a onz-org:Vestiging ;
+    rdfs:label          "Sensire - De Lunette" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_Den_Ooiman a onz-org:Vestiging ;
+    rdfs:label          "Sensire - Den Ooiman" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Sensire_De_Bundeling a onz-org:Vestiging ;
+    rdfs:label          "Sensire - De Bundeling" ;
+    onz-org:vestigingVan dummy:Organisatie_Sensire .
+
+dummy:Vestiging_Marga_Klompe_De_Molenberg a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - De Molenberg" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Pronsweide a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Pronsweide" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_De_Hoge_Weide a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - De Hoge Weide" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Het_Ambthuis a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Het Ambthuis" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Beth_San a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Beth San" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+dummy:Vestiging_Marga_Klompe_Hassinkhof a onz-org:Vestiging ;
+    rdfs:label          "Marga Klompé - Hassinkhof" ;
+    onz-org:vestigingVan dummy:Organisatie_Marga_Klompe .
+
+################################
+# HA/MSZ contacten
+################################
+
+# --- Wassink (100000001) ---
+
+dummy:Human_100000001 a onz-g:Human ; rdfs:label "Wassink" .
+
+dummy:Contact_100000001_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000001 ;
+    onz-g:startDatum           "2023-01-23"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Varsseveld ;
+    onz-g:definedBy            dummy:Code_100000001_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000001_1 .
+
+dummy:Code_100000001_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000001_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000001 .
+
+dummy:Contact_100000001_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000001 ;
+    onz-g:startDatum           "2025-08-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Silvolde ;
+    onz-g:definedBy            dummy:Code_100000001_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000001_2 .
+
+dummy:Code_100000001_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000001_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000001 .
+
+# --- Sloetjes (100000002) ---
+
+dummy:Human_100000002 a onz-g:Human ; rdfs:label "Sloetjes" .
+
+dummy:Contact_100000002_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000002 ;
+    onz-g:startDatum           "2022-06-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000002_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000002_1 .
+
+dummy:Code_100000002_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000002_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000002 .
+
+dummy:Contact_100000002_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000002 ;
+    onz-g:startDatum           "2024-02-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000002_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000002_2 .
+
+dummy:Code_100000002_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000002_2 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_100000002 .
+
+dummy:Contact_100000002_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000002 ;
+    onz-g:startDatum           "2024-03-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000002_3 ;
+    onz-g:definedBy            dummy:Indicatie_100000002_3 .
+
+dummy:Code_100000002_3 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000002_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000002 .
+
+# --- Kolkman (100000003) ---
+
+dummy:Human_100000003 a onz-g:Human ; rdfs:label "Kolkman" .
+
+dummy:Contact_100000003_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000003 ;
+    onz-g:startDatum           "2023-04-03"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Overstegen_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000003_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000003_1 .
+
+dummy:Code_100000003_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000003_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000003 .
+
+dummy:Contact_100000003_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000003 ;
+    onz-g:startDatum           "2025-01-04"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Overstegen_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000003_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000003_2 .
+
+dummy:Code_100000003_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000003_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000003 .
+
+dummy:Contact_100000003_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000003 ;
+    onz-g:startDatum           "2025-01-14"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Medisch_Centrum_Wehl ;
+    onz-g:definedBy            dummy:Code_100000003_3 ;
+    onz-g:definedBy            dummy:Indicatie_100000003_3 .
+
+dummy:Code_100000003_3 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000003_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000003 .
+
+# --- Penterman (100000004) ---
+
+dummy:Human_100000004 a onz-g:Human ; rdfs:label "Penterman" .
+
+dummy:Contact_100000004_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000004 ;
+    onz-g:startDatum           "2024-03-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000004_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000004_1 .
+
+dummy:Code_100000004_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000004_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000004 .
+
+dummy:Contact_100000004_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000004 ;
+    onz-g:startDatum           "2025-02-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000004_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000004_2 .
+
+dummy:Code_100000004_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000004_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000004 .
+
+# --- Radstake (100000005) ---
+
+dummy:Human_100000005 a onz-g:Human ; rdfs:label "Radstake" .
+
+dummy:Contact_100000005_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000005 ;
+    onz-g:startDatum           "2022-03-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Varsseveld ;
+    onz-g:definedBy            dummy:Code_100000005_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000005_1 .
+
+dummy:Code_100000005_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000005_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000005 .
+
+dummy:Contact_100000005_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000005 ;
+    onz-g:startDatum           "2025-07-11"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Varsseveld ;
+    onz-g:definedBy            dummy:Code_100000005_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000005_2 .
+
+dummy:Code_100000005_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000005_2 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_100000005 .
+
+dummy:Contact_100000005_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000005 ;
+    onz-g:startDatum           "2025-08-14"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Medisch_Centrum_Wehl ;
+    onz-g:definedBy            dummy:Code_100000005_3 ;
+    onz-g:definedBy            dummy:Indicatie_100000005_3 .
+
+dummy:Code_100000005_3 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000005_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000005 .
+
+# --- Weikamp (100000006) ---
+
+dummy:Human_100000006 a onz-g:Human ; rdfs:label "Weikamp" .
+
+dummy:Contact_100000006_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000006 ;
+    onz-g:startDatum           "2024-07-10"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Silvolde ;
+    onz-g:definedBy            dummy:Code_100000006_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000006_1 .
+
+dummy:Code_100000006_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000006_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000006 .
+
+dummy:Contact_100000006_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000006 ;
+    onz-g:startDatum           "2025-11-25"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Silvolde ;
+    onz-g:definedBy            dummy:Code_100000006_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000006_2 .
+
+dummy:Code_100000006_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000006_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000006 .
+
+# --- Garritsen (100000007) ---
+
+dummy:Human_100000007 a onz-g:Human ;
+    rdfs:label           "Garritsen" ;
+    onz-g:hasDateOfDeath "2025-07-22"^^xsd:date .
+
+dummy:Contact_100000007_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000007 ;
+    onz-g:startDatum           "2023-07-09"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Zelhem ;
+    onz-g:definedBy            dummy:Code_100000007_1 ;
+    onz-g:definedBy            dummy:Indicatie_100000007_1 .
+
+dummy:Code_100000007_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000007_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000007 .
+
+dummy:Contact_100000007_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000007 ;
+    onz-g:startDatum           "2025-06-20"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Varsseveld ;
+    onz-g:definedBy            dummy:Code_100000007_2 ;
+    onz-g:definedBy            dummy:Indicatie_100000007_2 .
+
+dummy:Code_100000007_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000007_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000007 .
+
+dummy:Contact_100000007_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_100000007 ;
+    onz-g:startDatum           "2025-07-08"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_100000007_3 ;
+    onz-g:definedBy            dummy:Indicatie_100000007_3 .
+
+dummy:Code_100000007_3 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_100000007_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_100000007 .
+
+# --- Freriks (200000001) ---
+
+dummy:Human_200000001 a onz-g:Human ; rdfs:label "Freriks" .
+
+dummy:Contact_200000001_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000001 ;
+    onz-g:startDatum           "2022-08-09"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Cardiologie ;
+    onz-g:definedBy            dummy:Code_200000001_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000001_1 .
+
+dummy:Code_200000001_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000001_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000001 .
+
+dummy:Contact_200000001_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000001 ;
+    onz-g:startDatum           "2024-02-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_200000001_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000001_2 .
+
+dummy:Code_200000001_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000001_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000001 .
+
+dummy:Contact_200000001_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000001 ;
+    onz-g:startDatum           "2026-03-15"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_200000001_3 ;
+    onz-g:definedBy            dummy:Indicatie_200000001_3 .
+
+dummy:Code_200000001_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000001_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000001 .
+
+# --- Gotink (200000002) ---
+
+dummy:Human_200000002 a onz-g:Human ; rdfs:label "Gotink" .
+
+dummy:Contact_200000002_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000002 ;
+    onz-g:startDatum           "2022-07-27"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_200000002_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000002_1 .
+
+dummy:Code_200000002_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000002_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000002 .
+
+dummy:Contact_200000002_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000002 ;
+    onz-g:startDatum           "2024-05-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Orthopedie ;
+    onz-g:definedBy            dummy:Code_200000002_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000002_2 .
+
+dummy:Code_200000002_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000002_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000002 .
+
+dummy:Contact_200000002_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000002 ;
+    onz-g:startDatum           "2024-12-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Orthopedie ;
+    onz-g:definedBy            dummy:Code_200000002_3 ;
+    onz-g:definedBy            dummy:Indicatie_200000002_3 .
+
+dummy:Code_200000002_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000002_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000002 .
+
+# --- Rensink (200000003) ---
+
+dummy:Human_200000003 a onz-g:Human ; rdfs:label "Rensink" .
+
+dummy:Contact_200000003_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000003 ;
+    onz-g:startDatum           "2024-10-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Cardiologie ;
+    onz-g:definedBy            dummy:Code_200000003_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000003_1 .
+
+dummy:Code_200000003_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000003_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_200000003 .
+
+dummy:Contact_200000003_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000003 ;
+    onz-g:startDatum           "2025-03-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Neurologie ;
+    onz-g:definedBy            dummy:Code_200000003_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000003_2 .
+
+dummy:Code_200000003_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000003_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000003 .
+
+# --- Vreeman (200000004) ---
+
+dummy:Human_200000004 a onz-g:Human ; rdfs:label "Vreeman" .
+
+dummy:Contact_200000004_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000004 ;
+    onz-g:startDatum           "2023-06-02"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_200000004_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000004_1 .
+
+dummy:Code_200000004_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000004_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000004 .
+
+dummy:Contact_200000004_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000004 ;
+    onz-g:startDatum           "2023-06-29"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_200000004_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000004_2 .
+
+dummy:Code_200000004_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000004_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000004 .
+
+dummy:Contact_200000004_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000004 ;
+    onz-g:startDatum           "2025-04-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_200000004_3 ;
+    onz-g:definedBy            dummy:Indicatie_200000004_3 .
+
+dummy:Code_200000004_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000004_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000004 .
+
+# --- Tuenter (200000005) ---
+
+dummy:Human_200000005 a onz-g:Human ; rdfs:label "Tuenter" .
+
+dummy:Contact_200000005_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000005 ;
+    onz-g:startDatum           "2023-02-11"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_200000005_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000005_1 .
+
+dummy:Code_200000005_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000005_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000005 .
+
+dummy:Contact_200000005_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000005 ;
+    onz-g:startDatum           "2024-05-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Neurologie ;
+    onz-g:definedBy            dummy:Code_200000005_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000005_2 .
+
+dummy:Code_200000005_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000005_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000005 .
+
+dummy:Contact_200000005_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000005 ;
+    onz-g:startDatum           "2025-10-02"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_200000005_3 ;
+    onz-g:definedBy            dummy:Indicatie_200000005_3 .
+
+dummy:Code_200000005_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000005_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000005 .
+
+# --- Obbink (200000006) ---
+
+dummy:Human_200000006 a onz-g:Human ; rdfs:label "Obbink" .
+
+dummy:Contact_200000006_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000006 ;
+    onz-g:startDatum           "2022-03-03"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_200000006_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000006_1 .
+
+dummy:Code_200000006_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000006_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000006 .
+
+dummy:Contact_200000006_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000006 ;
+    onz-g:startDatum           "2025-05-29"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_200000006_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000006_2 .
+
+dummy:Code_200000006_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000006_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000006 .
+
+dummy:Contact_200000006_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000006 ;
+    onz-g:startDatum           "2025-06-14"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_200000006_3 ;
+    onz-g:definedBy            dummy:Indicatie_200000006_3 .
+
+dummy:Code_200000006_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000006_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000006 .
+
+# --- Wentink (200000007) ---
+
+dummy:Human_200000007 a onz-g:Human ; rdfs:label "Wentink" .
+
+dummy:Contact_200000007_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000007 ;
+    onz-g:startDatum           "2023-11-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_200000007_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000007_1 .
+
+dummy:Code_200000007_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000007_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000007 .
+
+dummy:Contact_200000007_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000007 ;
+    onz-g:startDatum           "2024-03-27"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_200000007_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000007_2 .
+
+dummy:Code_200000007_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000007_2 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_200000007 .
+
+# --- Roerdink (200000008) ---
+
+dummy:Human_200000008 a onz-g:Human ;
+    rdfs:label           "Roerdink" ;
+    onz-g:hasDateOfDeath "2025-01-30"^^xsd:date .
+
+dummy:Contact_200000008_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000008 ;
+    onz-g:startDatum           "2022-06-04"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_200000008_1 ;
+    onz-g:definedBy            dummy:Indicatie_200000008_1 .
+
+dummy:Code_200000008_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000008_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_200000008 .
+
+dummy:Contact_200000008_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000008 ;
+    onz-g:startDatum           "2024-09-01"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Neurologie ;
+    onz-g:definedBy            dummy:Code_200000008_2 ;
+    onz-g:definedBy            dummy:Indicatie_200000008_2 .
+
+dummy:Code_200000008_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000008_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000008 .
+
+dummy:Contact_200000008_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_200000008 ;
+    onz-g:startDatum           "2024-12-04"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_200000008_3 ;
+    onz-g:definedBy            dummy:Indicatie_200000008_3 .
+
+dummy:Code_200000008_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_200000008_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_200000008 .
+
+# --- Nijman (300000001) ---
+
+dummy:Human_300000001 a onz-g:Human ; rdfs:label "Nijman" .
+
+dummy:Contact_300000001_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000001 ;
+    onz-g:startDatum           "2022-03-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Terborg ;
+    onz-g:definedBy            dummy:Code_300000001_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000001_1 .
+
+dummy:Code_300000001_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000001_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000001 .
+
+# --- Cornegoor (300000002) ---
+
+dummy:Human_300000002 a onz-g:Human ; rdfs:label "Cornegoor" .
+
+dummy:Contact_300000002_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000002 ;
+    onz-g:startDatum           "2024-12-16"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000002_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000002_1 .
+
+dummy:Code_300000002_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000002_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000002 .
+
+# --- te Winkel (300000003) ---
+
+dummy:Human_300000003 a onz-g:Human ; rdfs:label "te Winkel" .
+
+dummy:Contact_300000003_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000003 ;
+    onz-g:startDatum           "2022-12-31"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000003_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000003_1 .
+
+dummy:Code_300000003_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000003_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000003 .
+
+dummy:Contact_300000003_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000003 ;
+    onz-g:startDatum           "2023-03-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000003_2 ;
+    onz-g:definedBy            dummy:Indicatie_300000003_2 .
+
+dummy:Code_300000003_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000003_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000003 .
+
+# --- Damkot (300000005) ---
+
+dummy:Human_300000005 a onz-g:Human ; rdfs:label "Damkot" .
+
+dummy:Contact_300000005_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000005 ;
+    onz-g:startDatum           "2023-08-25"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000005_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000005_1 .
+
+dummy:Code_300000005_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000005_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000005 .
+
+dummy:Contact_300000005_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000005 ;
+    onz-g:startDatum           "2025-01-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000005_2 ;
+    onz-g:definedBy            dummy:Indicatie_300000005_2 .
+
+dummy:Code_300000005_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000005_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000005 .
+
+# --- Klein Holte (300000006) ---
+
+dummy:Human_300000006 a onz-g:Human ; rdfs:label "Klein Holte" .
+
+dummy:Contact_300000006_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000006 ;
+    onz-g:startDatum           "2023-04-11"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000006_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000006_1 .
+
+dummy:Code_300000006_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000006_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000006 .
+
+dummy:Contact_300000006_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000006 ;
+    onz-g:startDatum           "2023-08-01"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000006_2 ;
+    onz-g:definedBy            dummy:Indicatie_300000006_2 .
+
+dummy:Code_300000006_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000006_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000006 .
+
+# --- Cliënt 300000009 (300000009) ---
+
+dummy:Human_300000009 a onz-g:Human ; rdfs:label "Cliënt 300000009" .
+
+dummy:Contact_300000009_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000009 ;
+    onz-g:startDatum           "2022-05-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000009_1 .
+
+dummy:Code_300000009_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_300000009_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000009 ;
+    onz-g:startDatum           "2022-10-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000009_2 .
+
+dummy:Code_300000009_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Cliënt 300000012 (300000012) ---
+
+dummy:Human_300000012 a onz-g:Human ; rdfs:label "Cliënt 300000012" .
+
+dummy:Contact_300000012_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000012 ;
+    onz-g:startDatum           "2023-04-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000012_1 .
+
+dummy:Code_300000012_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_300000012_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000012 ;
+    onz-g:startDatum           "2023-09-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000012_2 .
+
+dummy:Code_300000012_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Cliënt 300000018 (300000018) ---
+
+dummy:Human_300000018 a onz-g:Human ; rdfs:label "Cliënt 300000018" .
+
+dummy:Contact_300000018_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000018 ;
+    onz-g:startDatum           "2023-09-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Varsseveld ;
+    onz-g:definedBy            dummy:Code_300000018_1 .
+
+dummy:Code_300000018_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_300000018_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000018 ;
+    onz-g:startDatum           "2023-12-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Varsseveld ;
+    onz-g:definedBy            dummy:Code_300000018_2 .
+
+dummy:Code_300000018_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Jansen op de Haar (300000020) ---
+
+dummy:Human_300000020 a onz-g:Human ; rdfs:label "Jansen op de Haar" .
+
+dummy:Contact_300000020_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000020 ;
+    onz-g:startDatum           "2023-04-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000020_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000020_1 .
+
+dummy:Code_300000020_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000020_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_300000020 .
+
+# --- Mentink (300000021) ---
+
+dummy:Human_300000021 a onz-g:Human ; rdfs:label "Mentink" .
+
+dummy:Contact_300000021_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000021 ;
+    onz-g:startDatum           "2022-08-27"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Orthopedie ;
+    onz-g:definedBy            dummy:Code_300000021_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000021_1 .
+
+dummy:Code_300000021_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000021_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_300000021 .
+
+dummy:Contact_300000021_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000021 ;
+    onz-g:startDatum           "2025-05-15"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Orthopedie ;
+    onz-g:definedBy            dummy:Code_300000021_2 ;
+    onz-g:definedBy            dummy:Indicatie_300000021_2 .
+
+dummy:Code_300000021_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000021_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000021 .
+
+# --- Stortelder (300000022) ---
+
+dummy:Human_300000022 a onz-g:Human ; rdfs:label "Stortelder" .
+
+dummy:Contact_300000022_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000022 ;
+    onz-g:startDatum           "2022-11-18"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Ulft ;
+    onz-g:definedBy            dummy:Code_300000022_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000022_1 .
+
+dummy:Code_300000022_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000022_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000022 .
+
+# --- Cliënt 300000023 (300000023) ---
+
+dummy:Human_300000023 a onz-g:Human ; rdfs:label "Cliënt 300000023" .
+
+dummy:Contact_300000023_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000023 ;
+    onz-g:startDatum           "2025-08-17"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Varsseveld ;
+    onz-g:definedBy            dummy:Code_300000023_1 .
+
+dummy:Code_300000023_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_300000023_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000023 ;
+    onz-g:startDatum           "2026-04-22"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Sensire_Wijkverpleging_Varsseveld ;
+    onz-g:definedBy            dummy:Code_300000023_2 .
+
+dummy:Code_300000023_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Lammers (300000025) ---
+
+dummy:Human_300000025 a onz-g:Human ; rdfs:label "Lammers" .
+
+dummy:Contact_300000025_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000025 ;
+    onz-g:startDatum           "2025-07-28"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Overstegen_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000025_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000025_1 .
+
+dummy:Code_300000025_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000025_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000025 .
+
+# --- Nijenhuis (300000026) ---
+
+dummy:Human_300000026 a onz-g:Human ; rdfs:label "Nijenhuis" .
+
+dummy:Contact_300000026_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000026 ;
+    onz-g:startDatum           "2023-08-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Varsseveld ;
+    onz-g:definedBy            dummy:Code_300000026_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000026_1 .
+
+dummy:Code_300000026_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000026_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_300000026 .
+
+# --- Lettink (300000027) ---
+
+dummy:Human_300000027 a onz-g:Human ; rdfs:label "Lettink" .
+
+dummy:Contact_300000027_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000027 ;
+    onz-g:startDatum           "2024-04-18"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Afdeling_Geriatrie ;
+    onz-g:definedBy            dummy:Code_300000027_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000027_1 .
+
+dummy:Code_300000027_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000027_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000027 .
+
+dummy:Contact_300000027_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000027 ;
+    onz-g:startDatum           "2026-01-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Afdeling_Geriatrie ;
+    onz-g:definedBy            dummy:Code_300000027_2 ;
+    onz-g:definedBy            dummy:Indicatie_300000027_2 .
+
+dummy:Code_300000027_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000027_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000027 .
+
+# --- Abbink (300000028) ---
+
+dummy:Human_300000028 a onz-g:Human ; rdfs:label "Abbink" .
+
+dummy:Contact_300000028_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000028 ;
+    onz-g:startDatum           "2022-05-21"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000028_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000028_1 .
+
+dummy:Code_300000028_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000028_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000028 .
+
+dummy:Contact_300000028_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000028 ;
+    onz-g:startDatum           "2022-10-07"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000028_2 ;
+    onz-g:definedBy            dummy:Indicatie_300000028_2 .
+
+dummy:Code_300000028_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000028_2 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000028 .
+
+dummy:Contact_300000028_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000028 ;
+    onz-g:startDatum           "2025-09-29"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_300000028_3 ;
+    onz-g:definedBy            dummy:Indicatie_300000028_3 .
+
+dummy:Code_300000028_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_300000028_3 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000028 .
+
+# --- Ottink (300000029) ---
+
+dummy:Human_300000029 a onz-g:Human ; rdfs:label "Ottink" .
+
+dummy:Contact_300000029_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000029 ;
+    onz-g:startDatum           "2025-08-05"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000029_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000029_1 .
+
+dummy:Code_300000029_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000029_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_300000029 .
+
+# --- Luimes (300000030) ---
+
+dummy:Human_300000030 a onz-g:Human ; rdfs:label "Luimes" .
+
+dummy:Contact_300000030_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_300000030 ;
+    onz-g:startDatum           "2024-06-19"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_300000030_1 ;
+    onz-g:definedBy            dummy:Indicatie_300000030_1 .
+
+dummy:Code_300000030_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_300000030_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_300000030 .
+
+# --- Saalmink (310000004) ---
+
+dummy:Human_310000004 a onz-g:Human ; rdfs:label "Saalmink" .
+
+dummy:Contact_310000004_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000004 ;
+    onz-g:startDatum           "2023-04-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_310000004_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000004_1 .
+
+dummy:Code_310000004_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000004_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_310000004 .
+
+dummy:Contact_310000004_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000004 ;
+    onz-g:startDatum           "2024-07-27"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_310000004_2 ;
+    onz-g:definedBy            dummy:Indicatie_310000004_2 .
+
+dummy:Code_310000004_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000004_2 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_310000004 .
+
+# --- Jolink (310000005) ---
+
+dummy:Human_310000005 a onz-g:Human ; rdfs:label "Jolink" .
+
+dummy:Contact_310000005_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000005 ;
+    onz-g:startDatum           "2024-08-21"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Cardiologie ;
+    onz-g:definedBy            dummy:Code_310000005_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000005_1 .
+
+dummy:Code_310000005_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000005_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000005 .
+
+# --- Cliënt 310000007 (310000007) ---
+
+dummy:Human_310000007 a onz-g:Human ; rdfs:label "Cliënt 310000007" .
+
+dummy:Contact_310000007_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000007 ;
+    onz-g:startDatum           "2023-07-06"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Groenlo ;
+    onz-g:definedBy            dummy:Code_310000007_1 .
+
+dummy:Code_310000007_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_310000007_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000007 ;
+    onz-g:startDatum           "2025-10-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Groenlo ;
+    onz-g:definedBy            dummy:Code_310000007_2 .
+
+dummy:Code_310000007_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Navis (310000008) ---
+
+dummy:Human_310000008 a onz-g:Human ; rdfs:label "Navis" .
+
+dummy:Contact_310000008_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000008 ;
+    onz-g:startDatum           "2022-06-26"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_310000008_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000008_1 .
+
+dummy:Code_310000008_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000008_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000008 .
+
+dummy:Contact_310000008_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000008 ;
+    onz-g:startDatum           "2023-10-13"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpost_Slingeland_Doetinchem ;
+    onz-g:definedBy            dummy:Code_310000008_2 ;
+    onz-g:definedBy            dummy:Indicatie_310000008_2 .
+
+dummy:Code_310000008_2 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000008_2 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000008 .
+
+# --- Ruesink (310000010) ---
+
+dummy:Human_310000010 a onz-g:Human ; rdfs:label "Ruesink" .
+
+dummy:Contact_310000010_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000010 ;
+    onz-g:startDatum           "2024-08-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Ulft ;
+    onz-g:definedBy            dummy:Code_310000010_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000010_1 .
+
+dummy:Code_310000010_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000010_1 a onz-zorg:WlzIndicatie ;
+    onz-g:isAbout dummy:Human_310000010 .
+
+dummy:Contact_310000010_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000010 ;
+    onz-g:startDatum           "2026-03-30"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Ulft ;
+    onz-g:definedBy            dummy:Code_310000010_2 .
+
+dummy:Code_310000010_2 a ext:HACode ; rdfs:label "HA" .
+
+# --- Geerdink (310000012) ---
+
+dummy:Human_310000012 a onz-g:Human ; rdfs:label "Geerdink" .
+
+dummy:Contact_310000012_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000012 ;
+    onz-g:startDatum           "2024-11-08"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Silvolde ;
+    onz-g:definedBy            dummy:Code_310000012_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000012_1 .
+
+dummy:Code_310000012_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000012_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000012 .
+
+# --- Lubbers (310000013) ---
+
+dummy:Human_310000013 a onz-g:Human ; rdfs:label "Lubbers" .
+
+dummy:Contact_310000013_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000013 ;
+    onz-g:startDatum           "2021-12-31"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_310000013_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000013_1 .
+
+dummy:Code_310000013_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000013_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000013 .
+
+dummy:Contact_310000013_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000013 ;
+    onz-g:startDatum           "2022-06-01"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_De_Kruisberg_Doetinchem ;
+    onz-g:definedBy            dummy:Code_310000013_2 .
+
+dummy:Code_310000013_2 a ext:HACode ; rdfs:label "HA" .
+
+# --- Leemreis (310000014) ---
+
+dummy:Human_310000014 a onz-g:Human ; rdfs:label "Leemreis" .
+
+dummy:Contact_310000014_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000014 ;
+    onz-g:startDatum           "2023-11-08"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_310000014_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000014_1 .
+
+dummy:Code_310000014_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000014_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_310000014 .
+
+dummy:Contact_310000014_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000014 ;
+    onz-g:startDatum           "2024-12-14"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Interne_Geneeskunde ;
+    onz-g:definedBy            dummy:Code_310000014_2 ;
+    onz-g:definedBy            dummy:Indicatie_310000014_2 .
+
+dummy:Code_310000014_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000014_2 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_310000014 .
+
+# --- Zieverink (310000015) ---
+
+dummy:Human_310000015 a onz-g:Human ; rdfs:label "Zieverink" .
+
+dummy:Contact_310000015_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000015 ;
+    onz-g:startDatum           "2021-11-21"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Neurologie ;
+    onz-g:definedBy            dummy:Code_310000015_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000015_1 .
+
+dummy:Code_310000015_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000015_1 a onz-zorg:IndicatieBesluitPartnerverblijf ;
+    onz-g:isAbout dummy:Human_310000015 .
+
+dummy:Contact_310000015_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000015 ;
+    onz-g:startDatum           "2022-05-22"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Neurologie ;
+    onz-g:definedBy            dummy:Code_310000015_2 ;
+    onz-g:definedBy            dummy:Indicatie_310000015_2 .
+
+dummy:Code_310000015_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000015_2 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_310000015 .
+
+dummy:Contact_310000015_3 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000015 ;
+    onz-g:startDatum           "2023-01-10"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_310000015_3 .
+
+dummy:Code_310000015_3 a ext:MSZCode ; rdfs:label "MSZ" .
+
+# --- Tankink (310000016) ---
+
+dummy:Human_310000016 a onz-g:Human ; rdfs:label "Tankink" .
+
+dummy:Contact_310000016_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000016 ;
+    onz-g:startDatum           "2024-04-20"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Terborg ;
+    onz-g:definedBy            dummy:Code_310000016_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000016_1 .
+
+dummy:Code_310000016_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000016_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000016 .
+
+dummy:Contact_310000016_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000016 ;
+    onz-g:startDatum           "2025-10-28"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Terborg ;
+    onz-g:definedBy            dummy:Code_310000016_2 .
+
+dummy:Code_310000016_2 a ext:HACode ; rdfs:label "HA" .
+
+# --- Groot Zevert (310000017) ---
+
+dummy:Human_310000017 a onz-g:Human ; rdfs:label "Groot Zevert" .
+
+dummy:Contact_310000017_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000017 ;
+    onz-g:startDatum           "2022-07-06"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Silvolde ;
+    onz-g:definedBy            dummy:Code_310000017_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000017_1 .
+
+dummy:Code_310000017_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000017_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000017 .
+
+# --- Cliënt 310000018 (310000018) ---
+
+dummy:Human_310000018 a onz-g:Human ; rdfs:label "Cliënt 310000018" .
+
+dummy:Contact_310000018_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000018 ;
+    onz-g:startDatum           "2023-12-20"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Groenlo ;
+    onz-g:definedBy            dummy:Code_310000018_1 .
+
+dummy:Code_310000018_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_310000018_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000018 ;
+    onz-g:startDatum           "2025-05-24"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Groenlo ;
+    onz-g:definedBy            dummy:Code_310000018_2 .
+
+dummy:Code_310000018_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Cliënt 310000019 (310000019) ---
+
+dummy:Human_310000019 a onz-g:Human ; rdfs:label "Cliënt 310000019" .
+
+dummy:Contact_310000019_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000019 ;
+    onz-g:startDatum           "2025-09-28"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Winterswijk ;
+    onz-g:definedBy            dummy:Code_310000019_1 .
+
+dummy:Code_310000019_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Wisselink (310000020) ---
+
+dummy:Human_310000020 a onz-g:Human ; rdfs:label "Wisselink" .
+
+dummy:Contact_310000020_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000020 ;
+    onz-g:startDatum           "2022-11-11"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Orthopedie ;
+    onz-g:definedBy            dummy:Code_310000020_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000020_1 .
+
+dummy:Code_310000020_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000020_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000020 .
+
+# --- ter Maat (310000021) ---
+
+dummy:Human_310000021 a onz-g:Human ; rdfs:label "ter Maat" .
+
+dummy:Contact_310000021_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000021 ;
+    onz-g:startDatum           "2025-06-08"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Geriatrie ;
+    onz-g:definedBy            dummy:Code_310000021_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000021_1 .
+
+dummy:Code_310000021_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000021_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000021 .
+
+# --- Veldkamp (310000024) ---
+
+dummy:Human_310000024 a onz-g:Human ; rdfs:label "Veldkamp" .
+
+dummy:Contact_310000024_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000024 ;
+    onz-g:startDatum           "2024-07-11"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_SEH ;
+    onz-g:definedBy            dummy:Code_310000024_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000024_1 .
+
+dummy:Code_310000024_1 a ext:MSZCode ; rdfs:label "MSZ" .
+
+dummy:Indicatie_310000024_1 a onz-zorg:WmoIndicatie ;
+    onz-g:isAbout dummy:Human_310000024 .
+
+dummy:Contact_310000024_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000024 ;
+    onz-g:startDatum           "2025-03-01"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Slingeland_Poli_Orthopedie ;
+    onz-g:definedBy            dummy:Code_310000024_2 .
+
+dummy:Code_310000024_2 a ext:MSZCode ; rdfs:label "MSZ" .
+
+# --- Cliënt 310000027 (310000027) ---
+
+dummy:Human_310000027 a onz-g:Human ; rdfs:label "Cliënt 310000027" .
+
+dummy:Contact_310000027_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000027 ;
+    onz-g:startDatum           "2024-03-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Winterswijk ;
+    onz-g:definedBy            dummy:Code_310000027_1 .
+
+dummy:Code_310000027_1 a ext:VVTCode ; rdfs:label "VVT" .
+
+dummy:Contact_310000027_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000027 ;
+    onz-g:startDatum           "2024-10-12"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Marga_Klompe_Thuiszorg_Winterswijk ;
+    onz-g:definedBy            dummy:Code_310000027_2 .
+
+dummy:Code_310000027_2 a ext:VVTCode ; rdfs:label "VVT" .
+
+# --- Hummelink (310000029) ---
+
+dummy:Human_310000029 a onz-g:Human ; rdfs:label "Hummelink" .
+
+dummy:Contact_310000029_1 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000029 ;
+    onz-g:startDatum           "2024-05-09"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Zelhem ;
+    onz-g:definedBy            dummy:Code_310000029_1 ;
+    onz-g:definedBy            dummy:Indicatie_310000029_1 .
+
+dummy:Code_310000029_1 a ext:HACode ; rdfs:label "HA" .
+
+dummy:Indicatie_310000029_1 a onz-zorg:ZvwIndicatie ;
+    onz-g:isAbout dummy:Human_310000029 .
+
+dummy:Contact_310000029_2 a onz-zorg:ZorgProces ;
+    onz-g:hasParticipant       dummy:Human_310000029 ;
+    onz-g:startDatum           "2025-09-18"^^xsd:date ;
+    onz-g:hasPerdurantLocation dummy:Vestiging_Huisartsenpraktijk_Zelhem ;
+    onz-g:definedBy            dummy:Code_310000029_2 .
+
+dummy:Code_310000029_2 a ext:HACode ; rdfs:label "HA" .
